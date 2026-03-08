@@ -1,0 +1,2271 @@
+{
+  "meta": {
+    "populationSource": "MOIS 주민등록 인구 및 세대현황 (연간) 2025년 말",
+    "populationYear": 2025,
+    "crimeSource": "sigungu-crime.geojson (CHM_CNT, with special-code mapping for Gangwon/Jeonbuk and 군위/부천 aggregation)",
+    "unit": "per100k",
+    "generatedAt": "2026-03-07T23:07:27.091026+09:00",
+    "gradeRule": {
+      "method": "tertiles",
+      "q1": 14287.725914091474,
+      "q2": 26449.507066992544
+    },
+    "notes": [
+      "강원특별자치도/전북특별자치도 코드 체계 변경 반영(42→51, 45→52)",
+      "군위군 코드 변경 반영(47720→27720 인구 사용)",
+      "부천시는 구 단위 인구 합산(41192+41194+41196)하여 41190에 매핑"
+    ]
+  },
+  "items": [
+    {
+      "sggCode": "51150",
+      "fullName": "강원도 강릉시",
+      "sigunguName": "강릉시",
+      "populationTotal": 206237,
+      "crimeScore": 46167.43,
+      "crimePer100k": 22385.619,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51820",
+      "fullName": "강원도 고성군",
+      "sigunguName": "고성군",
+      "populationTotal": 26845,
+      "crimeScore": 8596.51,
+      "crimePer100k": 32022.76,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51170",
+      "fullName": "강원도 동해시",
+      "sigunguName": "동해시",
+      "populationTotal": 86333,
+      "crimeScore": 17632.28,
+      "crimePer100k": 20423.569,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51230",
+      "fullName": "강원도 삼척시",
+      "sigunguName": "삼척시",
+      "populationTotal": 60518,
+      "crimeScore": 17640.14,
+      "crimePer100k": 29148.584,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51210",
+      "fullName": "강원도 속초시",
+      "sigunguName": "속초시",
+      "populationTotal": 79636,
+      "crimeScore": 15462.59,
+      "crimePer100k": 19416.583,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51800",
+      "fullName": "강원도 양구군",
+      "sigunguName": "양구군",
+      "populationTotal": 20410,
+      "crimeScore": 5138.31,
+      "crimePer100k": 25175.453,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51830",
+      "fullName": "강원도 양양군",
+      "sigunguName": "양양군",
+      "populationTotal": 27292,
+      "crimeScore": 8866.85,
+      "crimePer100k": 32488.825,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51750",
+      "fullName": "강원도 영월군",
+      "sigunguName": "영월군",
+      "populationTotal": 36054,
+      "crimeScore": 11782.31,
+      "crimePer100k": 32679.619,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51130",
+      "fullName": "강원도 원주시",
+      "sigunguName": "원주시",
+      "populationTotal": 363194,
+      "crimeScore": 55143.9,
+      "crimePer100k": 15183.043,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51810",
+      "fullName": "강원도 인제군",
+      "sigunguName": "인제군",
+      "populationTotal": 30863,
+      "crimeScore": 6905.92,
+      "crimePer100k": 22376.049,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51770",
+      "fullName": "강원도 정선군",
+      "sigunguName": "정선군",
+      "populationTotal": 34879,
+      "crimeScore": 10023.6,
+      "crimePer100k": 28738.209,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51780",
+      "fullName": "강원도 철원군",
+      "sigunguName": "철원군",
+      "populationTotal": 39979,
+      "crimeScore": 10433.2,
+      "crimePer100k": 26096.701,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51110",
+      "fullName": "강원도 춘천시",
+      "sigunguName": "춘천시",
+      "populationTotal": 285234,
+      "crimeScore": 53745.26,
+      "crimePer100k": 18842.515,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51190",
+      "fullName": "강원도 태백시",
+      "sigunguName": "태백시",
+      "populationTotal": 37088,
+      "crimeScore": 9347.36,
+      "crimePer100k": 25203.192,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "51760",
+      "fullName": "강원도 평창군",
+      "sigunguName": "평창군",
+      "populationTotal": 39831,
+      "crimeScore": 11897.65,
+      "crimePer100k": 29870.327,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51720",
+      "fullName": "강원도 홍천군",
+      "sigunguName": "홍천군",
+      "populationTotal": 66109,
+      "crimeScore": 19250.43,
+      "crimePer100k": 29119.227,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51790",
+      "fullName": "강원도 화천군",
+      "sigunguName": "화천군",
+      "populationTotal": 22371,
+      "crimeScore": 6158.67,
+      "crimePer100k": 27529.704,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "51730",
+      "fullName": "강원도 횡성군",
+      "sigunguName": "횡성군",
+      "populationTotal": 45627,
+      "crimeScore": 14508.32,
+      "crimePer100k": 31797.664,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "41820",
+      "fullName": "경기도 가평군",
+      "sigunguName": "가평군",
+      "populationTotal": 62125,
+      "crimeScore": 16614.46,
+      "crimePer100k": 26743.598,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "41281",
+      "fullName": "경기도 고양시 덕양구",
+      "sigunguName": "고양시 덕양구",
+      "populationTotal": 485546,
+      "crimeScore": 44783.18,
+      "crimePer100k": 9223.262,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41285",
+      "fullName": "경기도 고양시 일산동구",
+      "sigunguName": "고양시 일산동구",
+      "populationTotal": 296758,
+      "crimeScore": 26165.32,
+      "crimePer100k": 8817.056,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41287",
+      "fullName": "경기도 고양시 일산서구",
+      "sigunguName": "고양시 일산서구",
+      "populationTotal": 277777,
+      "crimeScore": 27038.08,
+      "crimePer100k": 9733.736,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41290",
+      "fullName": "경기도 과천시",
+      "sigunguName": "과천시",
+      "populationTotal": 79908,
+      "crimeScore": 9402.93,
+      "crimePer100k": 11767.195,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41210",
+      "fullName": "경기도 광명시",
+      "sigunguName": "광명시",
+      "populationTotal": 293947,
+      "crimeScore": 36474.6,
+      "crimePer100k": 12408.563,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41610",
+      "fullName": "경기도 광주시",
+      "sigunguName": "광주시",
+      "populationTotal": 397346,
+      "crimeScore": 43551.86,
+      "crimePer100k": 10960.689,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41310",
+      "fullName": "경기도 구리시",
+      "sigunguName": "구리시",
+      "populationTotal": 186090,
+      "crimeScore": 23723.02,
+      "crimePer100k": 12748.143,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41410",
+      "fullName": "경기도 군포시",
+      "sigunguName": "군포시",
+      "populationTotal": 251367,
+      "crimeScore": 35973.44,
+      "crimePer100k": 14311.123,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41570",
+      "fullName": "경기도 김포시",
+      "sigunguName": "김포시",
+      "populationTotal": 484792,
+      "crimeScore": 52669.46,
+      "crimePer100k": 10864.342,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41360",
+      "fullName": "경기도 남양주시",
+      "sigunguName": "남양주시",
+      "populationTotal": 729754,
+      "crimeScore": 92656.11,
+      "crimePer100k": 12696.896,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41250",
+      "fullName": "경기도 동두천시",
+      "sigunguName": "동두천시",
+      "populationTotal": 86438,
+      "crimeScore": 19709.35,
+      "crimePer100k": 22801.719,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41190",
+      "fullName": "경기도 부천시",
+      "sigunguName": "부천시",
+      "populationTotal": 758796,
+      "crimeScore": 98191.26,
+      "crimePer100k": 12940.403,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41135",
+      "fullName": "경기도 성남시 분당구",
+      "sigunguName": "성남시 분당구",
+      "populationTotal": 469833,
+      "crimeScore": 40133.24,
+      "crimePer100k": 8542.022,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41131",
+      "fullName": "경기도 성남시 수정구",
+      "sigunguName": "성남시 수정구",
+      "populationTotal": 232389,
+      "crimeScore": 20488.66,
+      "crimePer100k": 8816.536,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41133",
+      "fullName": "경기도 성남시 중원구",
+      "sigunguName": "성남시 중원구",
+      "populationTotal": 203572,
+      "crimeScore": 18447.76,
+      "crimePer100k": 9062.032,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41113",
+      "fullName": "경기도 수원시 권선구",
+      "sigunguName": "수원시 권선구",
+      "populationTotal": 361064,
+      "crimeScore": 24058.05,
+      "crimePer100k": 6663.099,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41117",
+      "fullName": "경기도 수원시 영통구",
+      "sigunguName": "수원시 영통구",
+      "populationTotal": 362493,
+      "crimeScore": 16191.38,
+      "crimePer100k": 4466.674,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41111",
+      "fullName": "경기도 수원시 장안구",
+      "sigunguName": "수원시 장안구",
+      "populationTotal": 271136,
+      "crimeScore": 23293.05,
+      "crimePer100k": 8590.91,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41115",
+      "fullName": "경기도 수원시 팔달구",
+      "sigunguName": "수원시 팔달구",
+      "populationTotal": 191822,
+      "crimeScore": 15631.39,
+      "crimePer100k": 8148.904,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41390",
+      "fullName": "경기도 시흥시",
+      "sigunguName": "시흥시",
+      "populationTotal": 515032,
+      "crimeScore": 43497.87,
+      "crimePer100k": 8445.664,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41273",
+      "fullName": "경기도 안산시 단원구",
+      "sigunguName": "안산시 단원구",
+      "populationTotal": 289769,
+      "crimeScore": 18909.09,
+      "crimePer100k": 6525.574,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41271",
+      "fullName": "경기도 안산시 상록구",
+      "sigunguName": "안산시 상록구",
+      "populationTotal": 322739,
+      "crimeScore": 25416.44,
+      "crimePer100k": 7875.23,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41550",
+      "fullName": "경기도 안성시",
+      "sigunguName": "안성시",
+      "populationTotal": 196592,
+      "crimeScore": 33747.8,
+      "crimePer100k": 17166.416,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41173",
+      "fullName": "경기도 안양시 동안구",
+      "sigunguName": "안양시 동안구",
+      "populationTotal": 329530,
+      "crimeScore": 22448.22,
+      "crimePer100k": 6812.193,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41171",
+      "fullName": "경기도 안양시 만안구",
+      "sigunguName": "안양시 만안구",
+      "populationTotal": 233749,
+      "crimeScore": 21984.24,
+      "crimePer100k": 9405.063,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41630",
+      "fullName": "경기도 양주시",
+      "sigunguName": "양주시",
+      "populationTotal": 296224,
+      "crimeScore": 35122.99,
+      "crimePer100k": 11856.902,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41830",
+      "fullName": "경기도 양평군",
+      "sigunguName": "양평군",
+      "populationTotal": 126933,
+      "crimeScore": 30038.53,
+      "crimePer100k": 23664.87,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41670",
+      "fullName": "경기도 여주시",
+      "sigunguName": "여주시",
+      "populationTotal": 114002,
+      "crimeScore": 24852.13,
+      "crimePer100k": 21799.732,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41800",
+      "fullName": "경기도 연천군",
+      "sigunguName": "연천군",
+      "populationTotal": 42340,
+      "crimeScore": 12436.42,
+      "crimePer100k": 29372.744,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "41370",
+      "fullName": "경기도 오산시",
+      "sigunguName": "오산시",
+      "populationTotal": 249410,
+      "crimeScore": 19869.04,
+      "crimePer100k": 7966.417,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41463",
+      "fullName": "경기도 용인시 기흥구",
+      "sigunguName": "용인시 기흥구",
+      "populationTotal": 435048,
+      "crimeScore": 35245.67,
+      "crimePer100k": 8101.559,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41465",
+      "fullName": "경기도 용인시 수지구",
+      "sigunguName": "용인시 수지구",
+      "populationTotal": 374094,
+      "crimeScore": 29625.32,
+      "crimePer100k": 7919.218,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41461",
+      "fullName": "경기도 용인시 처인구",
+      "sigunguName": "용인시 처인구",
+      "populationTotal": 282044,
+      "crimeScore": 23272.6,
+      "crimePer100k": 8251.408,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41430",
+      "fullName": "경기도 의왕시",
+      "sigunguName": "의왕시",
+      "populationTotal": 160370,
+      "crimeScore": 20633.89,
+      "crimePer100k": 12866.428,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41150",
+      "fullName": "경기도 의정부시",
+      "sigunguName": "의정부시",
+      "populationTotal": 461572,
+      "crimeScore": 66209.84,
+      "crimePer100k": 14344.423,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41500",
+      "fullName": "경기도 이천시",
+      "sigunguName": "이천시",
+      "populationTotal": 222967,
+      "crimeScore": 31068.87,
+      "crimePer100k": 13934.291,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41480",
+      "fullName": "경기도 파주시",
+      "sigunguName": "파주시",
+      "populationTotal": 526005,
+      "crimeScore": 66589.99,
+      "crimePer100k": 12659.574,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41220",
+      "fullName": "경기도 평택시",
+      "sigunguName": "평택시",
+      "populationTotal": 610402,
+      "crimeScore": 64688.54,
+      "crimePer100k": 10597.695,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41650",
+      "fullName": "경기도 포천시",
+      "sigunguName": "포천시",
+      "populationTotal": 140452,
+      "crimeScore": 29969.09,
+      "crimePer100k": 21337.603,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "41450",
+      "fullName": "경기도 하남시",
+      "sigunguName": "하남시",
+      "populationTotal": 327939,
+      "crimeScore": 31182.82,
+      "crimePer100k": 9508.726,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "41590",
+      "fullName": "경기도 화성시",
+      "sigunguName": "화성시",
+      "populationTotal": 989969,
+      "crimeScore": 70785.0,
+      "crimePer100k": 7150.224,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48310",
+      "fullName": "경상남도 거제시",
+      "sigunguName": "거제시",
+      "populationTotal": 231178,
+      "crimeScore": 24411.84,
+      "crimePer100k": 10559.759,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48880",
+      "fullName": "경상남도 거창군",
+      "sigunguName": "거창군",
+      "populationTotal": 58980,
+      "crimeScore": 20421.03,
+      "crimePer100k": 34623.652,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48820",
+      "fullName": "경상남도 고성군",
+      "sigunguName": "고성군",
+      "populationTotal": 47099,
+      "crimeScore": 18296.25,
+      "crimePer100k": 38846.366,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48250",
+      "fullName": "경상남도 김해시",
+      "sigunguName": "김해시",
+      "populationTotal": 533035,
+      "crimeScore": 55096.84,
+      "crimePer100k": 10336.439,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48840",
+      "fullName": "경상남도 남해군",
+      "sigunguName": "남해군",
+      "populationTotal": 40770,
+      "crimeScore": 20451.67,
+      "crimePer100k": 50163.527,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48270",
+      "fullName": "경상남도 밀양시",
+      "sigunguName": "밀양시",
+      "populationTotal": 99252,
+      "crimeScore": 30542.11,
+      "crimePer100k": 30772.287,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48240",
+      "fullName": "경상남도 사천시",
+      "sigunguName": "사천시",
+      "populationTotal": 107935,
+      "crimeScore": 25638.93,
+      "crimePer100k": 23754.046,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "48860",
+      "fullName": "경상남도 산청군",
+      "sigunguName": "산청군",
+      "populationTotal": 32745,
+      "crimeScore": 15402.4,
+      "crimePer100k": 47037.41,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48330",
+      "fullName": "경상남도 양산시",
+      "sigunguName": "양산시",
+      "populationTotal": 361155,
+      "crimeScore": 43198.49,
+      "crimePer100k": 11961.205,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48720",
+      "fullName": "경상남도 의령군",
+      "sigunguName": "의령군",
+      "populationTotal": 24636,
+      "crimeScore": 12463.6,
+      "crimePer100k": 50591.005,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48170",
+      "fullName": "경상남도 진주시",
+      "sigunguName": "진주시",
+      "populationTotal": 335939,
+      "crimeScore": 57494.71,
+      "crimePer100k": 17114.628,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "48740",
+      "fullName": "경상남도 창녕군",
+      "sigunguName": "창녕군",
+      "populationTotal": 54900,
+      "crimeScore": 21146.29,
+      "crimePer100k": 38517.832,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48125",
+      "fullName": "경상남도 창원시 마산합포구",
+      "sigunguName": "창원시 마산합포구",
+      "populationTotal": 175800,
+      "crimeScore": 22019.03,
+      "crimePer100k": 12525.046,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48127",
+      "fullName": "경상남도 창원시 마산회원구",
+      "sigunguName": "창원시 마산회원구",
+      "populationTotal": 176275,
+      "crimeScore": 17286.83,
+      "crimePer100k": 9806.739,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48123",
+      "fullName": "경상남도 창원시 성산구",
+      "sigunguName": "창원시 성산구",
+      "populationTotal": 246904,
+      "crimeScore": 10615.81,
+      "crimePer100k": 4299.57,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48121",
+      "fullName": "경상남도 창원시 의창구",
+      "sigunguName": "창원시 의창구",
+      "populationTotal": 207141,
+      "crimeScore": 17322.72,
+      "crimePer100k": 8362.767,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48129",
+      "fullName": "경상남도 창원시 진해구",
+      "sigunguName": "창원시 진해구",
+      "populationTotal": 184778,
+      "crimeScore": 16249.78,
+      "crimePer100k": 8794.218,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "48220",
+      "fullName": "경상남도 통영시",
+      "sigunguName": "통영시",
+      "populationTotal": 116667,
+      "crimeScore": 22844.05,
+      "crimePer100k": 19580.558,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "48850",
+      "fullName": "경상남도 하동군",
+      "sigunguName": "하동군",
+      "populationTotal": 39974,
+      "crimeScore": 18721.04,
+      "crimePer100k": 46833.041,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48730",
+      "fullName": "경상남도 함안군",
+      "sigunguName": "함안군",
+      "populationTotal": 57558,
+      "crimeScore": 17544.59,
+      "crimePer100k": 30481.584,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48870",
+      "fullName": "경상남도 함양군",
+      "sigunguName": "함양군",
+      "populationTotal": 35472,
+      "crimeScore": 15880.63,
+      "crimePer100k": 44769.48,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "48890",
+      "fullName": "경상남도 합천군",
+      "sigunguName": "합천군",
+      "populationTotal": 39190,
+      "crimeScore": 21554.72,
+      "crimePer100k": 55000.561,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47290",
+      "fullName": "경상북도 경산시",
+      "sigunguName": "경산시",
+      "populationTotal": 263853,
+      "crimeScore": 42940.44,
+      "crimePer100k": 16274.38,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "47130",
+      "fullName": "경상북도 경주시",
+      "sigunguName": "경주시",
+      "populationTotal": 244055,
+      "crimeScore": 58286.29,
+      "crimePer100k": 23882.44,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "47830",
+      "fullName": "경상북도 고령군",
+      "sigunguName": "고령군",
+      "populationTotal": 29667,
+      "crimeScore": 11112.1,
+      "crimePer100k": 37456.096,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47190",
+      "fullName": "경상북도 구미시",
+      "sigunguName": "구미시",
+      "populationTotal": 403883,
+      "crimeScore": 37859.04,
+      "crimePer100k": 9373.764,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "47720",
+      "fullName": "경상북도 군위군",
+      "sigunguName": "군위군",
+      "populationTotal": 22452,
+      "crimeScore": 10995.18,
+      "crimePer100k": 48971.94,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47150",
+      "fullName": "경상북도 김천시",
+      "sigunguName": "김천시",
+      "populationTotal": 133791,
+      "crimeScore": 35387.06,
+      "crimePer100k": 26449.507,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "47280",
+      "fullName": "경상북도 문경시",
+      "sigunguName": "문경시",
+      "populationTotal": 65348,
+      "crimeScore": 23789.63,
+      "crimePer100k": 36404.527,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47920",
+      "fullName": "경상북도 봉화군",
+      "sigunguName": "봉화군",
+      "populationTotal": 28315,
+      "crimeScore": 13616.8,
+      "crimePer100k": 48090.411,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47250",
+      "fullName": "경상북도 상주시",
+      "sigunguName": "상주시",
+      "populationTotal": 89888,
+      "crimeScore": 35473.25,
+      "crimePer100k": 39463.833,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47840",
+      "fullName": "경상북도 성주군",
+      "sigunguName": "성주군",
+      "populationTotal": 40720,
+      "crimeScore": 15072.58,
+      "crimePer100k": 37015.177,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47170",
+      "fullName": "경상북도 안동시",
+      "sigunguName": "안동시",
+      "populationTotal": 152610,
+      "crimeScore": 42669.27,
+      "crimePer100k": 27959.682,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47770",
+      "fullName": "경상북도 영덕군",
+      "sigunguName": "영덕군",
+      "populationTotal": 32698,
+      "crimeScore": 15946.49,
+      "crimePer100k": 48769.007,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47760",
+      "fullName": "경상북도 영양군",
+      "sigunguName": "영양군",
+      "populationTotal": 15941,
+      "crimeScore": 7261.27,
+      "crimePer100k": 45550.906,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47210",
+      "fullName": "경상북도 영주시",
+      "sigunguName": "영주시",
+      "populationTotal": 97162,
+      "crimeScore": 30164.72,
+      "crimePer100k": 31045.8,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47230",
+      "fullName": "경상북도 영천시",
+      "sigunguName": "영천시",
+      "populationTotal": 95185,
+      "crimeScore": 30406.92,
+      "crimePer100k": 31945.075,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47900",
+      "fullName": "경상북도 예천군",
+      "sigunguName": "예천군",
+      "populationTotal": 53887,
+      "crimeScore": 20339.05,
+      "crimePer100k": 37743.89,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47940",
+      "fullName": "경상북도 울릉군",
+      "sigunguName": "울릉군",
+      "populationTotal": 8696,
+      "crimeScore": 2281.01,
+      "crimePer100k": 26230.566,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "47930",
+      "fullName": "경상북도 울진군",
+      "sigunguName": "울진군",
+      "populationTotal": 45896,
+      "crimeScore": 16263.54,
+      "crimePer100k": 35435.637,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47730",
+      "fullName": "경상북도 의성군",
+      "sigunguName": "의성군",
+      "populationTotal": 47902,
+      "crimeScore": 25369.95,
+      "crimePer100k": 52962.194,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47820",
+      "fullName": "경상북도 청도군",
+      "sigunguName": "청도군",
+      "populationTotal": 40117,
+      "crimeScore": 18157.46,
+      "crimePer100k": 45261.261,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47750",
+      "fullName": "경상북도 청송군",
+      "sigunguName": "청송군",
+      "populationTotal": 23363,
+      "crimeScore": 10584.52,
+      "crimePer100k": 45304.627,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "47850",
+      "fullName": "경상북도 칠곡군",
+      "sigunguName": "칠곡군",
+      "populationTotal": 104842,
+      "crimeScore": 19596.71,
+      "crimePer100k": 18691.66,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "47111",
+      "fullName": "경상북도 포항시 남구",
+      "sigunguName": "포항시 남구",
+      "populationTotal": 215206,
+      "crimeScore": 21831.79,
+      "crimePer100k": 10144.601,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "47113",
+      "fullName": "경상북도 포항시 북구",
+      "sigunguName": "포항시 북구",
+      "populationTotal": 273501,
+      "crimeScore": 27252.59,
+      "crimePer100k": 9964.347,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "29200",
+      "fullName": "광주광역시 광산구",
+      "sigunguName": "광산구",
+      "populationTotal": 387604,
+      "crimeScore": 36796.41,
+      "crimePer100k": 9493.3,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "29155",
+      "fullName": "광주광역시 남구",
+      "sigunguName": "남구",
+      "populationTotal": 207596,
+      "crimeScore": 35536.54,
+      "crimePer100k": 17118.124,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "29110",
+      "fullName": "광주광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 104888,
+      "crimeScore": 21817.46,
+      "crimePer100k": 20800.721,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "29170",
+      "fullName": "광주광역시 북구",
+      "sigunguName": "북구",
+      "populationTotal": 416862,
+      "crimeScore": 59560.1,
+      "crimePer100k": 14287.726,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "29140",
+      "fullName": "광주광역시 서구",
+      "sigunguName": "서구",
+      "populationTotal": 275063,
+      "crimeScore": 39441.37,
+      "crimePer100k": 14339.031,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "27200",
+      "fullName": "대구광역시 남구",
+      "sigunguName": "남구",
+      "populationTotal": 135542,
+      "crimeScore": 32976.27,
+      "crimePer100k": 24329.189,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "27290",
+      "fullName": "대구광역시 달서구",
+      "sigunguName": "달서구",
+      "populationTotal": 517059,
+      "crimeScore": 70666.85,
+      "crimePer100k": 13667.077,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "27710",
+      "fullName": "대구광역시 달성군",
+      "sigunguName": "달성군",
+      "populationTotal": 254659,
+      "crimeScore": 30055.42,
+      "crimePer100k": 11802.222,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "27140",
+      "fullName": "대구광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 339281,
+      "crimeScore": 61669.77,
+      "crimePer100k": 18176.606,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "27230",
+      "fullName": "대구광역시 북구",
+      "sigunguName": "북구",
+      "populationTotal": 409854,
+      "crimeScore": 58022.59,
+      "crimePer100k": 14156.892,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "27170",
+      "fullName": "대구광역시 서구",
+      "sigunguName": "서구",
+      "populationTotal": 163956,
+      "crimeScore": 32907.01,
+      "crimePer100k": 20070.635,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "27260",
+      "fullName": "대구광역시 수성구",
+      "sigunguName": "수성구",
+      "populationTotal": 409222,
+      "crimeScore": 64507.43,
+      "crimePer100k": 15763.432,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "27110",
+      "fullName": "대구광역시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 101007,
+      "crimeScore": 15313.32,
+      "crimePer100k": 15160.652,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "30230",
+      "fullName": "대전광역시 대덕구",
+      "sigunguName": "대덕구",
+      "populationTotal": 165535,
+      "crimeScore": 25728.54,
+      "crimePer100k": 15542.659,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "30110",
+      "fullName": "대전광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 218664,
+      "crimeScore": 39833.38,
+      "crimePer100k": 18216.707,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "30170",
+      "fullName": "대전광역시 서구",
+      "sigunguName": "서구",
+      "populationTotal": 463351,
+      "crimeScore": 55564.58,
+      "crimePer100k": 11991.898,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "30200",
+      "fullName": "대전광역시 유성구",
+      "sigunguName": "유성구",
+      "populationTotal": 367534,
+      "crimeScore": 31389.7,
+      "crimePer100k": 8540.625,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "30140",
+      "fullName": "대전광역시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 225645,
+      "crimeScore": 43556.36,
+      "crimePer100k": 19303.047,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26440",
+      "fullName": "부산광역시 강서구",
+      "sigunguName": "강서구",
+      "populationTotal": 150299,
+      "crimeScore": 13671.51,
+      "crimePer100k": 9096.208,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "26410",
+      "fullName": "부산광역시 금정구",
+      "sigunguName": "금정구",
+      "populationTotal": 206588,
+      "crimeScore": 41648.24,
+      "crimePer100k": 20160.048,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26710",
+      "fullName": "부산광역시 기장군",
+      "sigunguName": "기장군",
+      "populationTotal": 174898,
+      "crimeScore": 25238.35,
+      "crimePer100k": 14430.325,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26290",
+      "fullName": "부산광역시 남구",
+      "sigunguName": "남구",
+      "populationTotal": 250668,
+      "crimeScore": 46185.72,
+      "crimePer100k": 18425.056,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26170",
+      "fullName": "부산광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 83851,
+      "crimeScore": 21457.61,
+      "crimePer100k": 25590.166,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26260",
+      "fullName": "부산광역시 동래구",
+      "sigunguName": "동래구",
+      "populationTotal": 273277,
+      "crimeScore": 41410.0,
+      "crimePer100k": 15153.123,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26230",
+      "fullName": "부산광역시 부산진구",
+      "sigunguName": "부산진구",
+      "populationTotal": 365378,
+      "crimeScore": 61261.19,
+      "crimePer100k": 16766.524,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26320",
+      "fullName": "부산광역시 북구",
+      "sigunguName": "북구",
+      "populationTotal": 262862,
+      "crimeScore": 41276.48,
+      "crimePer100k": 15702.719,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26530",
+      "fullName": "부산광역시 사상구",
+      "sigunguName": "사상구",
+      "populationTotal": 194124,
+      "crimeScore": 30055.07,
+      "crimePer100k": 15482.408,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26380",
+      "fullName": "부산광역시 사하구",
+      "sigunguName": "사하구",
+      "populationTotal": 286222,
+      "crimeScore": 49018.93,
+      "crimePer100k": 17126.192,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26140",
+      "fullName": "부산광역시 서구",
+      "sigunguName": "서구",
+      "populationTotal": 101892,
+      "crimeScore": 24960.02,
+      "crimePer100k": 24496.545,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26500",
+      "fullName": "부산광역시 수영구",
+      "sigunguName": "수영구",
+      "populationTotal": 169112,
+      "crimeScore": 32831.76,
+      "crimePer100k": 19414.211,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26470",
+      "fullName": "부산광역시 연제구",
+      "sigunguName": "연제구",
+      "populationTotal": 211727,
+      "crimeScore": 34086.46,
+      "crimePer100k": 16099.25,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "26200",
+      "fullName": "부산광역시 영도구",
+      "sigunguName": "영도구",
+      "populationTotal": 101580,
+      "crimeScore": 27809.13,
+      "crimePer100k": 27376.58,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "26110",
+      "fullName": "부산광역시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 36518,
+      "crimeScore": 9858.78,
+      "crimePer100k": 26997.043,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "26350",
+      "fullName": "부산광역시 해운대구",
+      "sigunguName": "해운대구",
+      "populationTotal": 372604,
+      "crimeScore": 62255.64,
+      "crimePer100k": 16708.259,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11680",
+      "fullName": "서울특별시 강남구",
+      "sigunguName": "강남구",
+      "populationTotal": 556330,
+      "crimeScore": 61876.99,
+      "crimePer100k": 11122.354,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11740",
+      "fullName": "서울특별시 강동구",
+      "sigunguName": "강동구",
+      "populationTotal": 499127,
+      "crimeScore": 55771.49,
+      "crimePer100k": 11173.807,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11305",
+      "fullName": "서울특별시 강북구",
+      "sigunguName": "강북구",
+      "populationTotal": 278928,
+      "crimeScore": 56117.48,
+      "crimePer100k": 20118.984,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11500",
+      "fullName": "서울특별시 강서구",
+      "sigunguName": "강서구",
+      "populationTotal": 549711,
+      "crimeScore": 75055.56,
+      "crimePer100k": 13653.64,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11620",
+      "fullName": "서울특별시 관악구",
+      "sigunguName": "관악구",
+      "populationTotal": 477605,
+      "crimeScore": 65388.22,
+      "crimePer100k": 13690.858,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11215",
+      "fullName": "서울특별시 광진구",
+      "sigunguName": "광진구",
+      "populationTotal": 331167,
+      "crimeScore": 43127.53,
+      "crimePer100k": 13022.895,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11530",
+      "fullName": "서울특별시 구로구",
+      "sigunguName": "구로구",
+      "populationTotal": 383829,
+      "crimeScore": 57529.29,
+      "crimePer100k": 14988.26,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11545",
+      "fullName": "서울특별시 금천구",
+      "sigunguName": "금천구",
+      "populationTotal": 223290,
+      "crimeScore": 32626.65,
+      "crimePer100k": 14611.783,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11350",
+      "fullName": "서울특별시 노원구",
+      "sigunguName": "노원구",
+      "populationTotal": 483541,
+      "crimeScore": 78998.23,
+      "crimePer100k": 16337.442,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11320",
+      "fullName": "서울특별시 도봉구",
+      "sigunguName": "도봉구",
+      "populationTotal": 299899,
+      "crimeScore": 56236.45,
+      "crimePer100k": 18751.796,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11230",
+      "fullName": "서울특별시 동대문구",
+      "sigunguName": "동대문구",
+      "populationTotal": 346241,
+      "crimeScore": 54646.16,
+      "crimePer100k": 15782.695,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11590",
+      "fullName": "서울특별시 동작구",
+      "sigunguName": "동작구",
+      "populationTotal": 371924,
+      "crimeScore": 57372.83,
+      "crimePer100k": 15425.955,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11440",
+      "fullName": "서울특별시 마포구",
+      "sigunguName": "마포구",
+      "populationTotal": 357616,
+      "crimeScore": 50829.4,
+      "crimePer100k": 14213.402,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11410",
+      "fullName": "서울특별시 서대문구",
+      "sigunguName": "서대문구",
+      "populationTotal": 300147,
+      "crimeScore": 51039.1,
+      "crimePer100k": 17004.701,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11650",
+      "fullName": "서울특별시 서초구",
+      "sigunguName": "서초구",
+      "populationTotal": 414428,
+      "crimeScore": 49776.4,
+      "crimePer100k": 12010.868,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11200",
+      "fullName": "서울특별시 성동구",
+      "sigunguName": "성동구",
+      "populationTotal": 274606,
+      "crimeScore": 40458.51,
+      "crimePer100k": 14733.294,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11290",
+      "fullName": "서울특별시 성북구",
+      "sigunguName": "성북구",
+      "populationTotal": 422559,
+      "crimeScore": 67142.84,
+      "crimePer100k": 15889.578,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11710",
+      "fullName": "서울특별시 송파구",
+      "sigunguName": "송파구",
+      "populationTotal": 643350,
+      "crimeScore": 74891.38,
+      "crimePer100k": 11640.846,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11470",
+      "fullName": "서울특별시 양천구",
+      "sigunguName": "양천구",
+      "populationTotal": 425088,
+      "crimeScore": 54589.49,
+      "crimePer100k": 12841.927,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "11560",
+      "fullName": "서울특별시 영등포구",
+      "sigunguName": "영등포구",
+      "populationTotal": 371362,
+      "crimeScore": 53410.65,
+      "crimePer100k": 14382.368,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11170",
+      "fullName": "서울특별시 용산구",
+      "sigunguName": "용산구",
+      "populationTotal": 201894,
+      "crimeScore": 36331.96,
+      "crimePer100k": 17995.562,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11380",
+      "fullName": "서울특별시 은평구",
+      "sigunguName": "은평구",
+      "populationTotal": 455137,
+      "crimeScore": 75433.3,
+      "crimePer100k": 16573.757,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11110",
+      "fullName": "서울특별시 종로구",
+      "sigunguName": "종로구",
+      "populationTotal": 137048,
+      "crimeScore": 26541.12,
+      "crimePer100k": 19366.295,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11140",
+      "fullName": "서울특별시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 117805,
+      "crimeScore": 21969.7,
+      "crimePer100k": 18649.208,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "11260",
+      "fullName": "서울특별시 중랑구",
+      "sigunguName": "중랑구",
+      "populationTotal": 376916,
+      "crimeScore": 58482.7,
+      "crimePer100k": 15516.11,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "36110",
+      "fullName": "세종특별자치시",
+      "sigunguName": "세종특별자치시",
+      "populationTotal": 391965,
+      "crimeScore": 45712.23,
+      "crimePer100k": 11662.324,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "31140",
+      "fullName": "울산광역시 남구",
+      "sigunguName": "남구",
+      "populationTotal": 304128,
+      "crimeScore": 29633.64,
+      "crimePer100k": 9743.805,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "31170",
+      "fullName": "울산광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 149257,
+      "crimeScore": 14076.57,
+      "crimePer100k": 9431.095,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "31200",
+      "fullName": "울산광역시 북구",
+      "sigunguName": "북구",
+      "populationTotal": 215220,
+      "crimeScore": 15471.75,
+      "crimePer100k": 7188.807,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "31710",
+      "fullName": "울산광역시 울주군",
+      "sigunguName": "울주군",
+      "populationTotal": 219174,
+      "crimeScore": 30890.23,
+      "crimePer100k": 14093.93,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "31110",
+      "fullName": "울산광역시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 204169,
+      "crimeScore": 26359.72,
+      "crimePer100k": 12910.736,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28710",
+      "fullName": "인천광역시 강화군",
+      "sigunguName": "강화군",
+      "populationTotal": 69698,
+      "crimeScore": 25397.11,
+      "crimePer100k": 36438.793,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "28245",
+      "fullName": "인천광역시 계양구",
+      "sigunguName": "계양구",
+      "populationTotal": 277721,
+      "crimeScore": 35526.48,
+      "crimePer100k": 12792.148,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28200",
+      "fullName": "인천광역시 남동구",
+      "sigunguName": "남동구",
+      "populationTotal": 480147,
+      "crimeScore": 63271.79,
+      "crimePer100k": 13177.587,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28140",
+      "fullName": "인천광역시 동구",
+      "sigunguName": "동구",
+      "populationTotal": 56477,
+      "crimeScore": 13384.74,
+      "crimePer100k": 23699.453,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "28177",
+      "fullName": "인천광역시 미추홀구",
+      "sigunguName": "미추홀구",
+      "populationTotal": 417578,
+      "crimeScore": 63395.91,
+      "crimePer100k": 15181.813,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "28237",
+      "fullName": "인천광역시 부평구",
+      "sigunguName": "부평구",
+      "populationTotal": 490442,
+      "crimeScore": 67240.01,
+      "crimePer100k": 13710.084,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28260",
+      "fullName": "인천광역시 서구",
+      "sigunguName": "서구",
+      "populationTotal": 654358,
+      "crimeScore": 52516.29,
+      "crimePer100k": 8025.621,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28185",
+      "fullName": "인천광역시 연수구",
+      "sigunguName": "연수구",
+      "populationTotal": 409437,
+      "crimeScore": 35824.83,
+      "crimePer100k": 8749.778,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "28720",
+      "fullName": "인천광역시 옹진군",
+      "sigunguName": "옹진군",
+      "populationTotal": 19636,
+      "crimeScore": 5682.54,
+      "crimePer100k": 28939.397,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "28110",
+      "fullName": "인천광역시 중구",
+      "sigunguName": "중구",
+      "populationTotal": 176467,
+      "crimeScore": 18826.49,
+      "crimePer100k": 10668.561,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "46810",
+      "fullName": "전라남도 강진군",
+      "sigunguName": "강진군",
+      "populationTotal": 31799,
+      "crimeScore": 14697.9,
+      "crimePer100k": 46221.265,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46770",
+      "fullName": "전라남도 고흥군",
+      "sigunguName": "고흥군",
+      "populationTotal": 59455,
+      "crimeScore": 32243.23,
+      "crimePer100k": 54231.318,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46720",
+      "fullName": "전라남도 곡성군",
+      "sigunguName": "곡성군",
+      "populationTotal": 27287,
+      "crimeScore": 13232.23,
+      "crimePer100k": 48492.799,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46230",
+      "fullName": "전라남도 광양시",
+      "sigunguName": "광양시",
+      "populationTotal": 155259,
+      "crimeScore": 20997.16,
+      "crimePer100k": 13523.957,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "46730",
+      "fullName": "전라남도 구례군",
+      "sigunguName": "구례군",
+      "populationTotal": 23803,
+      "crimeScore": 10769.57,
+      "crimePer100k": 45244.591,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46170",
+      "fullName": "전라남도 나주시",
+      "sigunguName": "나주시",
+      "populationTotal": 117076,
+      "crimeScore": 29279.83,
+      "crimePer100k": 25009.25,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "46710",
+      "fullName": "전라남도 담양군",
+      "sigunguName": "담양군",
+      "populationTotal": 44177,
+      "crimeScore": 16720.44,
+      "crimePer100k": 37848.745,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46110",
+      "fullName": "전라남도 목포시",
+      "sigunguName": "목포시",
+      "populationTotal": 202003,
+      "crimeScore": 34583.85,
+      "crimePer100k": 17120.464,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "46840",
+      "fullName": "전라남도 무안군",
+      "sigunguName": "무안군",
+      "populationTotal": 95592,
+      "crimeScore": 18786.5,
+      "crimePer100k": 19652.795,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "46780",
+      "fullName": "전라남도 보성군",
+      "sigunguName": "보성군",
+      "populationTotal": 36858,
+      "crimeScore": 19610.28,
+      "crimePer100k": 53204.949,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46150",
+      "fullName": "전라남도 순천시",
+      "sigunguName": "순천시",
+      "populationTotal": 275492,
+      "crimeScore": 46374.51,
+      "crimePer100k": 16833.342,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "46910",
+      "fullName": "전라남도 신안군",
+      "sigunguName": "신안군",
+      "populationTotal": 41858,
+      "crimeScore": 16481.87,
+      "crimePer100k": 39375.675,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46130",
+      "fullName": "전라남도 여수시",
+      "sigunguName": "여수시",
+      "populationTotal": 263284,
+      "crimeScore": 51402.09,
+      "crimePer100k": 19523.439,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "46870",
+      "fullName": "전라남도 영광군",
+      "sigunguName": "영광군",
+      "populationTotal": 53526,
+      "crimeScore": 17369.95,
+      "crimePer100k": 32451.425,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46830",
+      "fullName": "전라남도 영암군",
+      "sigunguName": "영암군",
+      "populationTotal": 50069,
+      "crimeScore": 16936.06,
+      "crimePer100k": 33825.441,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46890",
+      "fullName": "전라남도 완도군",
+      "sigunguName": "완도군",
+      "populationTotal": 44613,
+      "crimeScore": 18608.19,
+      "crimePer100k": 41710.241,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46880",
+      "fullName": "전라남도 장성군",
+      "sigunguName": "장성군",
+      "populationTotal": 42958,
+      "crimeScore": 15747.48,
+      "crimePer100k": 36657.852,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46800",
+      "fullName": "전라남도 장흥군",
+      "sigunguName": "장흥군",
+      "populationTotal": 34201,
+      "crimeScore": 16126.99,
+      "crimePer100k": 47153.563,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46900",
+      "fullName": "전라남도 진도군",
+      "sigunguName": "진도군",
+      "populationTotal": 27964,
+      "crimeScore": 12089.76,
+      "crimePer100k": 43233.3,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46860",
+      "fullName": "전라남도 함평군",
+      "sigunguName": "함평군",
+      "populationTotal": 29458,
+      "crimeScore": 14321.89,
+      "crimePer100k": 48617.999,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46820",
+      "fullName": "전라남도 해남군",
+      "sigunguName": "해남군",
+      "populationTotal": 62188,
+      "crimeScore": 25444.89,
+      "crimePer100k": 40916.077,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "46790",
+      "fullName": "전라남도 화순군",
+      "sigunguName": "화순군",
+      "populationTotal": 60215,
+      "crimeScore": 20052.16,
+      "crimePer100k": 33300.938,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52790",
+      "fullName": "전라북도 고창군",
+      "sigunguName": "고창군",
+      "populationTotal": 50396,
+      "crimeScore": 22711.52,
+      "crimePer100k": 45066.116,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52130",
+      "fullName": "전라북도 군산시",
+      "sigunguName": "군산시",
+      "populationTotal": 256291,
+      "crimeScore": 48856.75,
+      "crimePer100k": 19062.999,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "52210",
+      "fullName": "전라북도 김제시",
+      "sigunguName": "김제시",
+      "populationTotal": 81676,
+      "crimeScore": 31523.45,
+      "crimePer100k": 38595.732,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52190",
+      "fullName": "전라북도 남원시",
+      "sigunguName": "남원시",
+      "populationTotal": 74272,
+      "crimeScore": 26793.77,
+      "crimePer100k": 36075.197,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52730",
+      "fullName": "전라북도 무주군",
+      "sigunguName": "무주군",
+      "populationTotal": 22787,
+      "crimeScore": 9824.21,
+      "crimePer100k": 43113.222,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52800",
+      "fullName": "전라북도 부안군",
+      "sigunguName": "부안군",
+      "populationTotal": 47220,
+      "crimeScore": 19865.71,
+      "crimePer100k": 42070.542,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52770",
+      "fullName": "전라북도 순창군",
+      "sigunguName": "순창군",
+      "populationTotal": 27714,
+      "crimeScore": 11575.54,
+      "crimePer100k": 41767.843,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52710",
+      "fullName": "전라북도 완주군",
+      "sigunguName": "완주군",
+      "populationTotal": 100444,
+      "crimeScore": 23623.17,
+      "crimePer100k": 23518.747,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "52140",
+      "fullName": "전라북도 익산시",
+      "sigunguName": "익산시",
+      "populationTotal": 267066,
+      "crimeScore": 57882.56,
+      "crimePer100k": 21673.504,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "52750",
+      "fullName": "전라북도 임실군",
+      "sigunguName": "임실군",
+      "populationTotal": 25259,
+      "crimeScore": 12466.07,
+      "crimePer100k": 49352.983,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52740",
+      "fullName": "전라북도 장수군",
+      "sigunguName": "장수군",
+      "populationTotal": 20922,
+      "crimeScore": 9065.77,
+      "crimePer100k": 43331.278,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52113",
+      "fullName": "전라북도 전주시 덕진구",
+      "sigunguName": "전주시 덕진구",
+      "populationTotal": 309018,
+      "crimeScore": 27642.16,
+      "crimePer100k": 8945.162,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "52111",
+      "fullName": "전라북도 전주시 완산구",
+      "sigunguName": "전주시 완산구",
+      "populationTotal": 316419,
+      "crimeScore": 33259.34,
+      "crimePer100k": 10511.17,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "52180",
+      "fullName": "전라북도 정읍시",
+      "sigunguName": "정읍시",
+      "populationTotal": 101123,
+      "crimeScore": 35300.43,
+      "crimePer100k": 34908.409,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "52720",
+      "fullName": "전라북도 진안군",
+      "sigunguName": "진안군",
+      "populationTotal": 24249,
+      "crimeScore": 10638.87,
+      "crimePer100k": 43873.438,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "50130",
+      "fullName": "제주특별자치도 서귀포시",
+      "sigunguName": "서귀포시",
+      "populationTotal": 179610,
+      "crimeScore": 37594.4,
+      "crimePer100k": 20931.129,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "50110",
+      "fullName": "제주특별자치도 제주시",
+      "sigunguName": "제주시",
+      "populationTotal": 485182,
+      "crimeScore": 72700.78,
+      "crimePer100k": 14984.229,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "44250",
+      "fullName": "충청남도 계룡시",
+      "sigunguName": "계룡시",
+      "populationTotal": 45846,
+      "crimeScore": 5145.4,
+      "crimePer100k": 11223.226,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "44150",
+      "fullName": "충청남도 공주시",
+      "sigunguName": "공주시",
+      "populationTotal": 99979,
+      "crimeScore": 31086.52,
+      "crimePer100k": 31093.05,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44710",
+      "fullName": "충청남도 금산군",
+      "sigunguName": "금산군",
+      "populationTotal": 48898,
+      "crimeScore": 18121.12,
+      "crimePer100k": 37059.021,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44230",
+      "fullName": "충청남도 논산시",
+      "sigunguName": "논산시",
+      "populationTotal": 106777,
+      "crimeScore": 35108.2,
+      "crimePer100k": 32879.927,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44270",
+      "fullName": "충청남도 당진시",
+      "sigunguName": "당진시",
+      "populationTotal": 172564,
+      "crimeScore": 34913.99,
+      "crimePer100k": 20232.488,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "44180",
+      "fullName": "충청남도 보령시",
+      "sigunguName": "보령시",
+      "populationTotal": 92117,
+      "crimeScore": 28018.53,
+      "crimePer100k": 30416.242,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44760",
+      "fullName": "충청남도 부여군",
+      "sigunguName": "부여군",
+      "populationTotal": 58377,
+      "crimeScore": 27228.42,
+      "crimePer100k": 46642.376,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44210",
+      "fullName": "충청남도 서산시",
+      "sigunguName": "서산시",
+      "populationTotal": 172438,
+      "crimeScore": 36375.36,
+      "crimePer100k": 21094.747,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "44770",
+      "fullName": "충청남도 서천군",
+      "sigunguName": "서천군",
+      "populationTotal": 47225,
+      "crimeScore": 22728.37,
+      "crimePer100k": 48127.835,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44200",
+      "fullName": "충청남도 아산시",
+      "sigunguName": "아산시",
+      "populationTotal": 359378,
+      "crimeScore": 43824.66,
+      "crimePer100k": 12194.586,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "44810",
+      "fullName": "충청남도 예산군",
+      "sigunguName": "예산군",
+      "populationTotal": 78815,
+      "crimeScore": 28169.79,
+      "crimePer100k": 35741.661,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44131",
+      "fullName": "충청남도 천안시 동남구",
+      "sigunguName": "천안시 동남구",
+      "populationTotal": 262470,
+      "crimeScore": 23990.48,
+      "crimePer100k": 9140.275,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "44133",
+      "fullName": "충청남도 천안시 서북구",
+      "sigunguName": "천안시 서북구",
+      "populationTotal": 401852,
+      "crimeScore": 21738.71,
+      "crimePer100k": 5409.631,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "44790",
+      "fullName": "충청남도 청양군",
+      "sigunguName": "청양군",
+      "populationTotal": 29986,
+      "crimeScore": 13790.15,
+      "crimePer100k": 45988.628,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44825",
+      "fullName": "충청남도 태안군",
+      "sigunguName": "태안군",
+      "populationTotal": 59474,
+      "crimeScore": 20644.02,
+      "crimePer100k": 34711.0,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "44800",
+      "fullName": "충청남도 홍성군",
+      "sigunguName": "홍성군",
+      "populationTotal": 100557,
+      "crimeScore": 27481.22,
+      "crimePer100k": 27328.997,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43760",
+      "fullName": "충청북도 괴산군",
+      "sigunguName": "괴산군",
+      "populationTotal": 38293,
+      "crimeScore": 14363.78,
+      "crimePer100k": 37510.198,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43800",
+      "fullName": "충청북도 단양군",
+      "sigunguName": "단양군",
+      "populationTotal": 26812,
+      "crimeScore": 9405.9,
+      "crimePer100k": 35080.934,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43720",
+      "fullName": "충청북도 보은군",
+      "sigunguName": "보은군",
+      "populationTotal": 30529,
+      "crimeScore": 13280.4,
+      "crimePer100k": 43500.934,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43740",
+      "fullName": "충청북도 영동군",
+      "sigunguName": "영동군",
+      "populationTotal": 43032,
+      "crimeScore": 16775.78,
+      "crimePer100k": 38984.43,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43730",
+      "fullName": "충청북도 옥천군",
+      "sigunguName": "옥천군",
+      "populationTotal": 49601,
+      "crimeScore": 16797.35,
+      "crimePer100k": 33864.942,
+      "grade": "HIGH"
+    },
+    {
+      "sggCode": "43770",
+      "fullName": "충청북도 음성군",
+      "sigunguName": "음성군",
+      "populationTotal": 94280,
+      "crimeScore": 20978.95,
+      "crimePer100k": 22251.75,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "43150",
+      "fullName": "충청북도 제천시",
+      "sigunguName": "제천시",
+      "populationTotal": 128003,
+      "crimeScore": 28778.58,
+      "crimePer100k": 22482.739,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "43745",
+      "fullName": "충청북도 증평군",
+      "sigunguName": "증평군",
+      "populationTotal": 36680,
+      "crimeScore": 6586.6,
+      "crimePer100k": 17956.925,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "43750",
+      "fullName": "충청북도 진천군",
+      "sigunguName": "진천군",
+      "populationTotal": 86580,
+      "crimeScore": 14949.76,
+      "crimePer100k": 17266.99,
+      "grade": "MID"
+    },
+    {
+      "sggCode": "43111",
+      "fullName": "충청북도 청주시 상당구",
+      "sigunguName": "청주시 상당구",
+      "populationTotal": 194551,
+      "crimeScore": 19066.42,
+      "crimePer100k": 9800.217,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "43112",
+      "fullName": "충청북도 청주시 서원구",
+      "sigunguName": "청주시 서원구",
+      "populationTotal": 182689,
+      "crimeScore": 18513.71,
+      "crimePer100k": 10134.004,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "43114",
+      "fullName": "충청북도 청주시 청원구",
+      "sigunguName": "청주시 청원구",
+      "populationTotal": 186861,
+      "crimeScore": 16109.75,
+      "crimePer100k": 8621.248,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "43113",
+      "fullName": "충청북도 청주시 흥덕구",
+      "sigunguName": "청주시 흥덕구",
+      "populationTotal": 292051,
+      "crimeScore": 18074.5,
+      "crimePer100k": 6188.816,
+      "grade": "LOW"
+    },
+    {
+      "sggCode": "43130",
+      "fullName": "충청북도 충주시",
+      "sigunguName": "충주시",
+      "populationTotal": 206540,
+      "crimeScore": 43899.98,
+      "crimePer100k": 21254.953,
+      "grade": "MID"
+    }
+  ]
+}
