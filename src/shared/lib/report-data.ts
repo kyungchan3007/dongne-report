@@ -99,12 +99,33 @@ async function loadSchoolIndexInternal() {
   };
 
   if (!Array.isArray(json) && json.byNameRegion && typeof json.byNameRegion === "object") {
+    const byCode =
+      json.byCode && typeof json.byCode === "object"
+        ? (json.byCode as Record<string, Record<string, unknown>>)
+        : {};
+
     const entries = Object.entries(json.byNameRegion as Record<string, unknown>);
     entries.forEach(([key, value]) => {
       const rawCandidates = Array.isArray(value) ? value : [value];
-      const candidates = rawCandidates.map(normalizeCandidate).filter(Boolean) as SchoolIndexCandidate[];
-      if (!candidates.length) return;
       const normalizedKey = normalizeName(key);
+      const [namePartRaw = "", regionPartRaw = ""] = key.includes("|") ? key.split("|") : [key, ""];
+      const candidates = rawCandidates
+        .map((candidate) => {
+          if (typeof candidate === "string") {
+            const byCodeItem = byCode[candidate];
+            return normalizeCandidate({
+              schoolCode: candidate,
+              schoolName: namePartRaw,
+              region2depth: regionPartRaw,
+              roadAddress:
+                typeof byCodeItem?.roadAddress === "string" ? byCodeItem.roadAddress : undefined,
+            });
+          }
+          return normalizeCandidate(candidate);
+        })
+        .filter(Boolean) as SchoolIndexCandidate[];
+      if (!candidates.length) return;
+
       if (normalizedKey.includes("|")) {
         const [namePart, regionPart] = normalizedKey.split("|");
         byNameRegion.set(`${namePart}|${regionPart}`, candidates);
@@ -164,7 +185,14 @@ export async function mapSchoolCode(params: {
     candidates = fallbackItems.filter(
       (item) =>
         normalizeName(item.schoolName ?? "") === normalizedName &&
-        normalizeName(item.region2depth ?? "") === normalizedSigungu,
+        (() => {
+          const candidateRegion = normalizeName(item.region2depth ?? "");
+          return (
+            candidateRegion === normalizedSigungu ||
+            candidateRegion.endsWith(normalizedSigungu) ||
+            normalizedSigungu.endsWith(candidateRegion)
+          );
+        })(),
     );
   }
 

@@ -1,6 +1,7 @@
 import type { ReportPoi } from "@/entities/report/model/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import {Dispatch, SetStateAction} from "react";
+import {SchoolInfoModal} from "@/widgets/school-detail/ui/SchoolinfoModal";
 
 type Props = {
   count: number;
@@ -11,7 +12,7 @@ type Props = {
   selectedSchool: ReportPoi | null;
 };
 
-export function SchoolCard({ count, mappedCount, unmappedCount, top10 , setSelectedSchool }: Props) {
+export function SchoolCard({ count, mappedCount, unmappedCount, top10 , setSelectedSchool , selectedSchool }: Props) {
     return (
         <>
         <Card>
@@ -28,9 +29,9 @@ export function SchoolCard({ count, mappedCount, unmappedCount, top10 , setSelec
                         <li key={item.id} className="rounded border p-2">
                             <button
                                 type="button"
-                                disabled={!item.schoolCode}
+                                // disabled={!item.schoolCode}
                                 onClick={() => setSelectedSchool(item)}
-                                className="w-full text-left disabled:cursor-not-allowed disabled:opacity-60"
+                                className="w-full text-left  disabled:opacity-60"
                             >
                                 <div className="font-medium">{item.name}</div>
                                 <div className="text-xs text-slate-500">{item.roadAddress || item.address}</div>
@@ -46,12 +47,12 @@ export function SchoolCard({ count, mappedCount, unmappedCount, top10 , setSelec
             </CardContent>
         </Card>
 
-    {/*<SchoolInfoModal*/}
-    {/*    open={!!selected}*/}
-    {/*    schoolName={selected?.name ?? ""}*/}
-    {/*    schoolCode={selected?.schoolCode ?? ""}*/}
-    {/*    onClose={() => setSelected(null)}*/}
-    {/*/>*/}
+    <SchoolInfoModal
+        open={!!selectedSchool}
+        schoolName={selectedSchool?.name ?? ""}
+        schoolCode={selectedSchool?.schoolCode ?? ""}
+        onClose={() => setSelectedSchool(null)}
+    />
         </>
     );
 }
