@@ -49,6 +49,7 @@ export function SchoolCard({ count, mappedCount, unmappedCount, top10 , setSelec
 
     <SchoolInfoModal
         open={!!selectedSchool}
+        address={selectedSchool?.address??""}
         schoolName={selectedSchool?.name ?? ""}
         schoolCode={selectedSchool?.schoolCode ?? ""}
         onClose={() => setSelectedSchool(null)}

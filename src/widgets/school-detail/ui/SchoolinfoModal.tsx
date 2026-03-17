@@ -2,6 +2,7 @@
 
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useEffect, useState } from "react";
+import type {ReportPoi} from "@/entities/report/model/types";
 
 type SchoolInfoResult = {
     apiType: string;
@@ -19,6 +20,7 @@ type Props = {
     open: boolean;
     schoolName: string;
     schoolCode: string;
+    address:string;
     onClose: () => void;
 };
 
@@ -32,11 +34,11 @@ const TITLE: Record<string, string> = {
     "51": "입학생 현황",
 };
 
-export function SchoolInfoModal({ open, schoolName, schoolCode, onClose }: Props) {
+export function SchoolInfoModal({ open, schoolName, schoolCode, onClose, address }: Props) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [data, setData] = useState<SchoolInfoResponse | null>(null);
-
+    console.log(data)
     useEffect(() => {
         if (!open) return;
 
@@ -45,7 +47,9 @@ export function SchoolInfoModal({ open, schoolName, schoolCode, onClose }: Props
         setError("");
         setData(null);
 
-        fetch(`/api/schoolinfo?schoolCode=${encodeURIComponent(schoolCode)}&all=1`)
+        fetch(
+            `/api/schoolinfo?schoolCode=${encodeURIComponent(schoolCode)}&schoolName=${encodeURIComponent(schoolName)}&address=${encodeURIComponent(address)}&all=1`
+        )
             .then(async (r) => {
                 if (!r.ok) throw new Error("SchoolInfo 조회 실패");
                 return (await r.json()) as SchoolInfoResponse;
@@ -87,7 +91,7 @@ export function SchoolInfoModal({ open, schoolName, schoolCode, onClose }: Props
                                         </h4>
                                         <p className="text-xs text-slate-500">status: {result.status}</p>
                                         <pre className="mt-2 max-h-60 overflow-auto rounded bg-slate-50 p-2 text-xs">
-                      {result.raw}
+                              {result.raw}
                     </pre>
                                     </section>
                                 ))}
