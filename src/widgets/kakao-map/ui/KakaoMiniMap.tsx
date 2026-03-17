@@ -63,6 +63,6 @@ export function KakaoMiniMap({ x, y }: Props) {
 
     return () => script.removeEventListener("load", onScriptLoad);
   }, [x, y]);
-  console.log(mapRef)
+
   return <div ref={mapRef} className="h-48 w-full rounded-md border" />;
 }
