@@ -55,9 +55,9 @@ async function readPublicJson<T>(fileName: string): Promise<T> {
 
 async function loadSafetyLookupInternal() {
   const json = await readPublicJson<{ items?: SafetyItem[] } | SafetyItem[]>(
-    "safety-sigungu-per100k-250.json",
+    "safety-sigungu-per100k-250.json"
   );
-  const items = Array.isArray(json) ? json : json.items ?? [];
+  const items = Array.isArray(json) ? json : (json.items ?? []);
   const map = new Map<string, SafetyItem>();
 
   items.forEach((item) => {
@@ -78,7 +78,7 @@ export function loadSafetyLookup() {
 
 async function loadSchoolIndexInternal() {
   const json = await readPublicJson<Record<string, unknown> | Array<Record<string, unknown>>>(
-    "school-codes-index.json",
+    "school-codes-index.json"
   );
 
   const byNameRegion = new Map<string, SchoolIndexCandidate[]>();
@@ -136,12 +136,11 @@ async function loadSchoolIndexInternal() {
     });
   }
 
-  const itemList =
-    Array.isArray(json)
-      ? json
-      : Array.isArray(json.items)
-        ? (json.items as Array<Record<string, unknown>>)
-        : [];
+  const itemList = Array.isArray(json)
+    ? json
+    : Array.isArray(json.items)
+      ? (json.items as Array<Record<string, unknown>>)
+      : [];
 
   itemList.forEach((raw) => {
     const candidate = normalizeCandidate(raw);
@@ -192,7 +191,7 @@ export async function mapSchoolCode(params: {
             candidateRegion.endsWith(normalizedSigungu) ||
             normalizedSigungu.endsWith(candidateRegion)
           );
-        })(),
+        })()
     );
   }
 

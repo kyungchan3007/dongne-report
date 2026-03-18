@@ -45,7 +45,11 @@ async function buildReport(params: {
 
     if (!resolvedX || !resolvedY || !resolvedName || !resolvedAddress) {
       const fallbackQuery = params.name?.trim() || placeId;
-      const fallback = await getKakaoKeywordSearchCached({ query: fallbackQuery, page: 1, size: 15 });
+      const fallback = await getKakaoKeywordSearchCached({
+        query: fallbackQuery,
+        page: 1,
+        size: 15,
+      });
       const matched = fallback.documents.find((doc) => doc.id === placeId) ?? fallback.documents[0];
       if (matched) {
         resolvedX = resolvedX ?? matched.x;
@@ -124,7 +128,6 @@ async function buildReport(params: {
 
     const mappedCount = schoolPois.filter((s) => s.schoolCode).length;
 
-
     const report: NeighborhoodReport = {
       place: {
         placeId,
@@ -161,10 +164,7 @@ async function buildReport(params: {
   });
 }
 
-export async function GET(
-  request: NextRequest,
-  context: { params: Promise<{ placeId: string }> },
-) {
+export async function GET(request: NextRequest, context: { params: Promise<{ placeId: string }> }) {
   try {
     const { placeId } = await context.params;
     const x = request.nextUrl.searchParams.get("x") ?? undefined;
@@ -177,7 +177,7 @@ export async function GET(
   } catch (error) {
     return NextResponse.json(
       { message: error instanceof Error ? error.message : "Internal Server Error" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

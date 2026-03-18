@@ -66,7 +66,7 @@ export function getKakaoKeywordSearchCached(params: KeywordSearchParams) {
         x: params.x,
         y: params.y,
         radius: params.radius,
-      }),
+      })
   );
 }
 
@@ -89,7 +89,7 @@ export function getKakaoCategorySearchCached(params: CategorySearchParams) {
         radius: params.radius,
         page: params.page ?? 1,
         size: params.size ?? 15,
-      }),
+      })
   );
 }
 
@@ -98,6 +98,6 @@ export function getKakaoCoord2RegionCached(x: string, y: string) {
     kakaoFetch<KakaoCoord2RegionResponse>("/v2/local/geo/coord2regioncode.json", {
       x,
       y,
-    }),
+    })
   );
 }

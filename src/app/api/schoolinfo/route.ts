@@ -63,7 +63,9 @@ let regionCodesPromise: Promise<RegionCodeJson> | null = null;
 function loadRegionCodes(): Promise<RegionCodeJson> {
   if (!regionCodesPromise) {
     const filePath = path.join(process.cwd(), "public", "data", "schoolinfo-region-codes.json");
-    regionCodesPromise = readFile(filePath, "utf-8").then((text) => JSON.parse(text) as RegionCodeJson);
+    regionCodesPromise = readFile(filePath, "utf-8").then(
+      (text) => JSON.parse(text) as RegionCodeJson
+    );
   }
 
   return regionCodesPromise;
@@ -102,7 +104,7 @@ function filterSchoolList(
   list: SchoolInfoListItem[],
   schoolCode: string,
   schoolName: string,
-  address: string,
+  address: string
 ): SchoolInfoListItem[] {
   const normalizedCode = normalizeText(schoolCode);
   const normalizedName = normalizeText(schoolName);
@@ -125,7 +127,12 @@ function filterSchoolList(
   return byAddress.length > 0 ? byAddress : byName;
 }
 
-function maybeFilterRawResponse(raw: string, schoolCode: string, schoolName: string, address: string): string {
+function maybeFilterRawResponse(
+  raw: string,
+  schoolCode: string,
+  schoolName: string,
+  address: string
+): string {
   try {
     const parsed = JSON.parse(raw) as SchoolInfoApiPayload;
 
@@ -171,7 +178,9 @@ export async function GET(request: NextRequest) {
         ...(sidoCode ? { sidoCode } : {}),
         ...(sggCode ? { sggCode } : {}),
       });
-      const response = await fetch(`${env.SCHOOLINFO_BASE_URL}?${params.toString()}`, { cache: "no-store" });
+      const response = await fetch(`${env.SCHOOLINFO_BASE_URL}?${params.toString()}`, {
+        cache: "no-store",
+      });
       const raw = await response.text();
 
       return {
@@ -179,7 +188,7 @@ export async function GET(request: NextRequest) {
         status: response.status,
         raw: maybeFilterRawResponse(raw, schoolCode, schoolName, address ?? ""),
       };
-    }),
+    })
   );
 
   return NextResponse.json({ schoolCode, year: 2025, results });

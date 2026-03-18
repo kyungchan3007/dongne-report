@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     if (!category_group_code || !x || !y || !radiusRaw) {
       return NextResponse.json(
         { message: "category_group_code, x, y, radius are required" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     return NextResponse.json(
       { message: error instanceof Error ? error.message : "Internal Server Error" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
