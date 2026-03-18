@@ -44,7 +44,10 @@ export function AptSearchBox() {
     };
   }, [debounced]);
 
-  const empty = useMemo(() => debounced && !loading && items.length === 0, [debounced, loading, items.length]);
+  const empty = useMemo(
+    () => debounced && !loading && items.length === 0,
+    [debounced, loading, items.length]
+  );
 
   return (
     <Combobox
@@ -71,7 +74,9 @@ export function AptSearchBox() {
 
         <Combobox.Options className="absolute z-20 mt-2 max-h-80 w-full overflow-auto rounded-md border bg-white p-1 shadow-lg">
           {loading ? <div className="px-3 py-2 text-sm text-slate-500">검색 중...</div> : null}
-          {empty ? <div className="px-3 py-2 text-sm text-slate-500">검색 결과가 없습니다.</div> : null}
+          {empty ? (
+            <div className="px-3 py-2 text-sm text-slate-500">검색 결과가 없습니다.</div>
+          ) : null}
           {items.map((item) => (
             <Combobox.Option
               key={item.id}
@@ -81,7 +86,9 @@ export function AptSearchBox() {
               }
             >
               <div className="text-sm font-medium text-slate-900">{item.place_name}</div>
-              <div className="text-xs text-slate-600">{item.road_address_name || item.address_name}</div>
+              <div className="text-xs text-slate-600">
+                {item.road_address_name || item.address_name}
+              </div>
             </Combobox.Option>
           ))}
         </Combobox.Options>

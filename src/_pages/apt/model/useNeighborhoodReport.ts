@@ -23,7 +23,10 @@ function buildQueryString(params: Omit<Params, "placeId">) {
 }
 
 export function useNeighborhoodReport({ placeId, x, y, name, address }: Params) {
-  const queryString = useMemo(() => buildQueryString({ x, y, name, address }), [x, y, name, address]);
+  const queryString = useMemo(
+    () => buildQueryString({ x, y, name, address }),
+    [x, y, name, address]
+  );
 
   return useQuery({
     queryKey: ["report", placeId, x, y, name, address],
