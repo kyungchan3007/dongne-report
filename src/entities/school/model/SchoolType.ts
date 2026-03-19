@@ -250,6 +250,17 @@ export type SchoolInfoListItemByApiType = {
   "51": SchoolInfoListItemApi51;
 };
 
+export type SchoolItem = {
+  item:
+    | SchoolInfoListItemApi0
+    | SchoolInfoListItemApi08
+    | SchoolInfoListItemApi62
+    | SchoolInfoListItemApi63
+    | SchoolInfoListItemApi09
+    | SchoolInfoListItemApi94
+    | SchoolInfoListItemApi51;
+};
+
 type ParsedSchoolInfoResultByType<T extends SchoolInfoApiType> = {
   apiType: T;
   status: number;

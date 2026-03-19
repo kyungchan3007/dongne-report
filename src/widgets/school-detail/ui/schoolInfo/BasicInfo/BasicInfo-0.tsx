@@ -1,8 +1,9 @@
 import type { SchoolInfoListItemApi0 } from "@/entities/school/model/SchoolType";
+import { KakaoMiniMap } from "@/widgets/kakao-map/ui/KakaoMiniMap";
 
 export const RenderApi0 = (item: SchoolInfoListItemApi0) => {
   return (
-    <div className="mt-2 flex max-h-60 flex-col gap-1 overflow-auto rounded bg-slate-50 p-2 text-xs">
+    <div className="mt-2 flex max-h-90 flex-col gap-1 overflow-auto rounded bg-slate-50 p-2 text-xs">
       <p>{item.ABSCH_YN}</p>
       <p>{item.SCHUL_NM}</p>
       <p>{item.ADRES_BRKDN}</p>
@@ -15,6 +16,9 @@ export const RenderApi0 = (item: SchoolInfoListItemApi0) => {
       <p>{item.USER_TELNO}</p>
       <p>{item.ZIP_CODE}</p>
       <p>{item.PERC_FAXNO}</p>
+      <div>
+        <KakaoMiniMap x={String(item.LGTUD)} y={String(item.LTTUD)} />
+      </div>
     </div>
   );
 };
