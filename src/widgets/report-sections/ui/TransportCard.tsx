@@ -13,24 +13,24 @@ export function TransportCard({ subwayTop3, busCount, busTop5 }: Props) {
       <CardHeader>
         <CardTitle>교통</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3 text-sm text-slate-700">
-        <div>
-          <p className="mb-1 font-medium">지하철역 (1km) Top3</p>
-          <ul className="list-inside list-disc space-y-1">
+      <CardContent className="space-y-4 text-sm text-[#4e5968]">
+        <div className="rounded-2xl bg-[#f8fbff] p-3">
+          <p className="mb-2 text-sm font-semibold text-[#191f28]">지하철역 Top 3 (1km)</p>
+          <ul className="space-y-1">
             {subwayTop3.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <li key={item.id}>• {item.name}</li>
             ))}
-            {!subwayTop3.length ? <li>데이터 없음</li> : null}
+            {!subwayTop3.length ? <li>데이터가 없습니다.</li> : null}
           </ul>
         </div>
-        <div>
-          <p className="mb-1 font-medium">버스정류장 (1km)</p>
-          <p className="mb-1">총 {busCount}개</p>
-          <ul className="list-inside list-disc space-y-1">
+        <div className="rounded-2xl bg-[#f8fbff] p-3">
+          <p className="mb-2 text-sm font-semibold text-[#191f28]">버스정류장 (1km)</p>
+          <p className="mb-2">총 {busCount}개</p>
+          <ul className="space-y-1">
             {busTop5.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <li key={item.id}>• {item.name}</li>
             ))}
-            {!busTop5.length ? <li>데이터 없음</li> : null}
+            {!busTop5.length ? <li>데이터가 없습니다.</li> : null}
           </ul>
         </div>
       </CardContent>

@@ -1,6 +1,7 @@
+import { Dispatch, SetStateAction } from "react";
+
 import type { ReportPoi } from "@/entities/report/model/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
-import { Dispatch, SetStateAction } from "react";
 import { SchoolInfoModal } from "@/widgets/school-detail/ui/SchoolinfoModal";
 
 type Props = {
@@ -24,32 +25,38 @@ export function SchoolCard({
     <>
       <Card>
         <CardHeader>
-          <CardTitle>학교</CardTitle>
+          <CardTitle>학군</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-2 text-sm text-slate-700">
-          <p>학교 (1.5km): 총 {count}개</p>
-          <p>
-            코드 매핑: {mappedCount}개 / 미매핑: {unmappedCount}개
-          </p>
-          <ul className="space-y-1">
-            {top10.map((item) => (
-              <li key={item.id} className="rounded border p-2">
-                <button
-                  type="button"
-                  // disabled={!item.schoolCode}
-                  onClick={() => setSelectedSchool(item)}
-                  className="w-full text-left  disabled:opacity-60"
-                >
-                  <div className="font-medium">{item.name}</div>
-                  <div className="text-xs text-slate-500">{item.roadAddress || item.address}</div>
-                  <div className="text-xs">schoolCode: {item.schoolCode ?? "N/A"}</div>
-                  {!item.schoolCode ? (
-                    <div className="text-xs text-amber-600">코드 미매핑으로 상세 조회 불가</div>
-                  ) : null}
-                </button>
-              </li>
-            ))}
-            {!top10.length ? <li>데이터 없음</li> : null}
+        <CardContent className="space-y-3 text-sm text-[#4e5968]">
+          <div className="rounded-2xl bg-[#f8fbff] p-3">
+            <p>학교 (1.5km): 총 {count}개</p>
+            <p className="mt-1">코드 매핑 {mappedCount}개 / 미매핑 {unmappedCount}개</p>
+          </div>
+
+          <ul className="space-y-2">
+            {top10.map((item) => {
+              const disabled = !item.schoolCode;
+              return (
+                <li key={item.id} className="rounded-2xl border border-[#e6eef9] bg-white p-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedSchool(item)}
+                    disabled={disabled}
+                    className="w-full text-left disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    <p className="text-sm font-semibold text-[#191f28]">{item.name}</p>
+                    <p className="mt-1 text-xs text-[#6b7684]">{item.roadAddress || item.address}</p>
+                    <p className="mt-1 text-xs text-[#4e5968]">schoolCode: {item.schoolCode ?? "N/A"}</p>
+                    {disabled ? (
+                      <p className="mt-1 text-xs font-semibold text-[#b26a00]">
+                        학교 코드가 없어 상세 조회가 불가능합니다.
+                      </p>
+                    ) : null}
+                  </button>
+                </li>
+              );
+            })}
+            {!top10.length ? <li>데이터가 없습니다.</li> : null}
           </ul>
         </CardContent>
       </Card>

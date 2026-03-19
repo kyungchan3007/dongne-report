@@ -28,6 +28,7 @@ export function AptSearchBox() {
         setItems([]);
         return;
       }
+
       setLoading(true);
       try {
         const response = await fetch(`/api/kakao/search?query=${encodeURIComponent(debounced)}`);
@@ -45,7 +46,7 @@ export function AptSearchBox() {
   }, [debounced]);
 
   const empty = useMemo(
-    () => debounced && !loading && items.length === 0,
+    () => debounced.length > 0 && !loading && items.length === 0,
     [debounced, loading, items.length]
   );
 
@@ -65,28 +66,30 @@ export function AptSearchBox() {
       }}
     >
       <div className="relative">
+        <div className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-xs font-semibold text-[#8b95a1]">
+          SEARCH
+        </div>
         <Combobox.Input
           as={Input}
           displayValue={(item: KakaoPlace | null) => item?.place_name ?? query}
-          placeholder="아파트/오피스텔 이름 또는 주소를 입력하세요"
+          placeholder="아파트/오피스텔명 또는 도로명 주소"
           onChange={(event) => setQuery(event.target.value)}
+          className="pl-[84px]"
         />
 
-        <Combobox.Options className="absolute z-20 mt-2 max-h-80 w-full overflow-auto rounded-md border bg-white p-1 shadow-lg">
-          {loading ? <div className="px-3 py-2 text-sm text-slate-500">검색 중...</div> : null}
-          {empty ? (
-            <div className="px-3 py-2 text-sm text-slate-500">검색 결과가 없습니다.</div>
-          ) : null}
+        <Combobox.Options className="absolute z-20 mt-2 max-h-[22rem] w-full overflow-auto rounded-2xl border border-[#dce7f5] bg-white p-2 shadow-[0_20px_50px_rgba(15,23,42,0.15)]">
+          {loading ? <div className="px-3 py-2 text-sm text-[#6b7684]">검색 중...</div> : null}
+          {empty ? <div className="px-3 py-2 text-sm text-[#6b7684]">검색 결과가 없습니다.</div> : null}
           {items.map((item) => (
             <Combobox.Option
               key={item.id}
               value={item}
               className={({ active }) =>
-                `cursor-pointer rounded px-3 py-2 ${active ? "bg-slate-100" : ""}`
+                `cursor-pointer rounded-xl px-3 py-3 transition ${active ? "bg-[#f2f7ff]" : ""}`
               }
             >
-              <div className="text-sm font-medium text-slate-900">{item.place_name}</div>
-              <div className="text-xs text-slate-600">
+              <div className="text-sm font-semibold text-[#191f28]">{item.place_name}</div>
+              <div className="mt-1 text-xs text-[#6b7684]">
                 {item.road_address_name || item.address_name}
               </div>
             </Combobox.Option>
