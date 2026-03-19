@@ -12,14 +12,17 @@ export function ChildcareCard({ count, top5 }: Props) {
       <CardHeader>
         <CardTitle>보육</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-2 text-sm text-slate-700">
+      <CardContent className="space-y-3 text-sm text-[#4e5968]">
         <p>어린이집/유치원 (1km): 총 {count}개</p>
-        <ul className="list-inside list-disc space-y-1">
-          {top5.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-          {!top5.length ? <li>데이터 없음</li> : null}
-        </ul>
+        <div className="rounded-2xl bg-[#f8fbff] p-3">
+          <p className="mb-2 text-sm font-semibold text-[#191f28]">주변 시설 Top 5</p>
+          <ul className="space-y-1">
+            {top5.map((item) => (
+              <li key={item.id}>• {item.name}</li>
+            ))}
+            {!top5.length ? <li>데이터가 없습니다.</li> : null}
+          </ul>
+        </div>
       </CardContent>
     </Card>
   );

@@ -4,12 +4,27 @@
 
 :root {
   color-scheme: light;
+  --bg-start: #f3f7fb;
+  --bg-end: #eaf2fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fbff;
+  --line: #e5edf7;
+  --text-primary: #191f28;
+  --text-secondary: #4e5968;
+  --brand: #3182f6;
+  --brand-strong: #1b64da;
+  --shadow-soft: 0 10px 40px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.07);
 }
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f7fafc 0%, #eef3f8 100%);
-  color: hsl(222 47% 11%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(1200px 500px at 100% -10%, rgba(49, 130, 246, 0.16), transparent 60%),
+    linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text-primary);
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
