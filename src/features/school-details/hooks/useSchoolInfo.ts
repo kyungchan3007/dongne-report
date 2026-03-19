@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type {
+import {
   ParsedSchoolInfoResult,
   SchoolInfoApiPayload,
   SchoolInfoApiType,
   SchoolInfoData,
   SchoolInfoResponse,
+  SchoolItem,
 } from "@/entities/school/model/SchoolType";
 
 type Params = {
@@ -52,7 +53,7 @@ function parseRawResult<T extends SchoolInfoApiType>(
     const parsed = JSON.parse(raw) as SchoolInfoApiPayload;
     const rawItems = Array.isArray(parsed.list) ? parsed.list : [];
     const items = rawItems as ParsedByType<T>["items"];
-    const selectedItem = (selectBySchoolCode(items, schoolCode) ??
+    const selectedItem = (selectBySchoolCode<SchoolItem["item"]>(items, schoolCode) ??
       (items.length === 1 ? items[0] : null)) as ParsedByType<T>["selectedItem"];
 
     return {
