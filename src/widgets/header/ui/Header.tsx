@@ -1,27 +1,51 @@
+"use client";
+
+import { Home, MapPin } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
-    <header className="sticky top-0 z-40 border-b border-[#dce7f5]/80 bg-white/75 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-[#1b64da]">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#3182f6] text-white">
-            D
+    <header className="sticky top-0 z-40 border-b border-[#e5e8eb] bg-white/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
+        {/* 로고 */}
+        <Link href="/" className="inline-flex items-center gap-2 group">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#3182f6] text-white shadow-[0_2px_8px_rgba(49,130,246,0.4)] transition-transform group-hover:scale-105">
+            <Home size={15} strokeWidth={2.5} />
           </span>
-          dongne-report
+          <span className="text-[15px] font-bold text-[#191f28] tracking-tight">
+            동네리포트
+          </span>
         </Link>
-        <nav className="flex items-center gap-1 rounded-full border border-[#dce7f5] bg-white p-1 text-sm text-[#4e5968] shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-          <Link href="/" className="rounded-full px-3 py-1.5 transition hover:bg-[#f2f7ff] hover:text-[#1b64da]">
-            Search
+
+        {/* 네비게이션 */}
+        <nav className="flex items-center gap-1">
+          <Link
+            href="/"
+            className={`flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150 ${
+              pathname === "/"
+                ? "bg-[#e8f3ff] text-[#3182f6]"
+                : "text-[#4e5968] hover:bg-[#f2f4f6] hover:text-[#191f28]"
+            }`}
+          >
+            <MapPin size={14} strokeWidth={2} />
+            검색
           </Link>
           <Link
             href="/about"
-            className="rounded-full px-3 py-1.5 transition hover:bg-[#f2f7ff] hover:text-[#1b64da]"
+            className={`rounded-xl px-3 py-1.5 text-sm font-medium transition-all duration-150 ${
+              pathname === "/about"
+                ? "bg-[#e8f3ff] text-[#3182f6]"
+                : "text-[#4e5968] hover:bg-[#f2f4f6] hover:text-[#191f28]"
+            }`}
           >
-            About
+            소개
           </Link>
         </nav>
       </div>
     </header>
   );
 }
+

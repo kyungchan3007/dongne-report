@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useSchoolClickHooks } from "@/features/school-details/hooks/useSchoolClickHooks";
 import { useNeighborhoodReport } from "@/pages/apt/model/useNeighborhoodReport";
 import { AptDetailContent } from "@/pages/apt/ui/AptDetailContent";
@@ -14,23 +16,42 @@ type Props = {
   address?: string;
 };
 
+const pageVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" as const } },
+  exit: { opacity: 0, y: -8, transition: { duration: 0.2, ease: "easeIn" as const } },
+};
+
 export function AptDetailPage({ placeId, x, y, name, address }: Props) {
   const { selectedSchool, setSelectedSchool } = useSchoolClickHooks();
   const reportQuery = useNeighborhoodReport({ placeId, x, y, name, address });
 
-  if (reportQuery.isLoading) {
-    return <AptDetailLoading />;
-  }
-
-  if (reportQuery.error || !reportQuery.data) {
-    return <AptDetailError message={(reportQuery.error as Error | null)?.message} />;
-  }
+  const stateKey = reportQuery.isLoading ? "loading" : reportQuery.error ? "error" : "content";
 
   return (
-    <AptDetailContent
-      report={reportQuery.data}
-      selectedSchool={selectedSchool}
-      setSelectedSchool={setSelectedSchool}
-    />
+    <AnimatePresence mode="wait">
+      {reportQuery.isLoading && (
+        <motion.div key="loading" {...pageVariants}>
+          <AptDetailLoading />
+        </motion.div>
+      )}
+
+      {!reportQuery.isLoading && (reportQuery.error || !reportQuery.data) && (
+        <motion.div key="error" {...pageVariants}>
+          <AptDetailError message={(reportQuery.error as Error | null)?.message} />
+        </motion.div>
+      )}
+
+      {!reportQuery.isLoading && reportQuery.data && (
+        <motion.div key={`content-${stateKey}`} {...pageVariants}>
+          <AptDetailContent
+            report={reportQuery.data}
+            selectedSchool={selectedSchool}
+            setSelectedSchool={setSelectedSchool}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
+

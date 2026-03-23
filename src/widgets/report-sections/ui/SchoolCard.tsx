@@ -1,3 +1,4 @@
+import { ChevronRight, GraduationCap } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 
 import type { ReportPoi } from "@/entities/report/model/types";
@@ -25,38 +26,69 @@ export function SchoolCard({
     <>
       <Card>
         <CardHeader>
-          <CardTitle>학군</CardTitle>
+          <div className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fff0e8]">
+              <GraduationCap size={16} className="text-[#f06000]" />
+            </span>
+            <CardTitle>학군</CardTitle>
+          </div>
         </CardHeader>
-        <CardContent className="space-y-3 text-sm text-[#4e5968]">
-          <div className="rounded-2xl bg-[#f8fbff] p-3">
-            <p>학교 (1.5km): 총 {count}개</p>
-            <p className="mt-1">코드 매핑 {mappedCount}개 / 미매핑 {unmappedCount}개</p>
+        <CardContent className="space-y-3">
+          {/* 요약 배지 */}
+          <div className="flex flex-wrap gap-2">
+            <span className="rounded-full bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-[#4e5968]">
+              학교 (1.5km) 총 {count}개
+            </span>
+            <span className="rounded-full bg-[#e8f3ff] px-3 py-1 text-xs font-semibold text-[#3182f6]">
+              코드 매핑 {mappedCount}개
+            </span>
+            <span className="rounded-full bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-[#8b95a1]">
+              미매핑 {unmappedCount}개
+            </span>
           </div>
 
+          {/* 학교 목록 */}
           <ul className="space-y-2">
             {top10.map((item) => {
               const disabled = !item.schoolCode;
               return (
-                <li key={item.id} className="rounded-2xl border border-[#e6eef9] bg-white p-3">
+                <li key={item.id}>
                   <button
                     type="button"
                     onClick={() => setSelectedSchool(item)}
                     disabled={disabled}
-                    className="w-full text-left disabled:cursor-not-allowed disabled:opacity-60"
+                    className={`group w-full rounded-xl border p-3 text-left transition-all duration-150 ${
+                      disabled
+                        ? "cursor-not-allowed border-[#f2f4f6] bg-[#f9fafb] opacity-60"
+                        : "border-[#e5e8eb] bg-white hover:border-[#3182f6] hover:bg-[#f8fbff]"
+                    }`}
                   >
-                    <p className="text-sm font-semibold text-[#191f28]">{item.name}</p>
-                    <p className="mt-1 text-xs text-[#6b7684]">{item.roadAddress || item.address}</p>
-                    <p className="mt-1 text-xs text-[#4e5968]">schoolCode: {item.schoolCode ?? "N/A"}</p>
-                    {disabled ? (
-                      <p className="mt-1 text-xs font-semibold text-[#b26a00]">
-                        학교 코드가 없어 상세 조회가 불가능합니다.
-                      </p>
-                    ) : null}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-[#191f28]">{item.name}</p>
+                        <p className="mt-0.5 truncate text-xs text-[#6b7684]">
+                          {item.roadAddress || item.address}
+                        </p>
+                        {disabled && (
+                          <p className="mt-1 text-xs font-medium text-[#f04452]">
+                            학교 코드 없음 · 상세 조회 불가
+                          </p>
+                        )}
+                      </div>
+                      {!disabled && (
+                        <ChevronRight
+                          size={16}
+                          className="flex-shrink-0 text-[#b0b8c1] transition-colors group-hover:text-[#3182f6]"
+                        />
+                      )}
+                    </div>
                   </button>
                 </li>
               );
             })}
-            {!top10.length ? <li>데이터가 없습니다.</li> : null}
+            {!top10.length && (
+              <li className="py-2 text-sm text-[#b0b8c1]">데이터가 없습니다.</li>
+            )}
           </ul>
         </CardContent>
       </Card>
@@ -71,3 +103,4 @@ export function SchoolCard({
     </>
   );
 }
+
