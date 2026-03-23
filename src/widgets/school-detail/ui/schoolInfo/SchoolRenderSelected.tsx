@@ -6,6 +6,7 @@ import { RenderAp63 } from "@/widgets/school-detail/ui/schoolInfo/StudentStatus/
 import { RenderAp09 } from "@/widgets/school-detail/ui/schoolInfo/Grade-classStudentStatus/Grade-classStudentStatus";
 import { RenderAp94 } from "@/widgets/school-detail/ui/schoolInfo/College-lifelongEducationResult/College-LifelongEducationResult";
 import { RenderAp51 } from "@/widgets/school-detail/ui/schoolInfo/AdmissionStatus/AdmissionStatus";
+import { RenderAp73 } from "@/widgets/school-detail/ui/schoolInfo/uniformStatus/uniformStatus";
 
 export const SchoolRenderSelected = (result: ParsedSchoolInfoResult) => {
   if (!result.selectedItem) {
@@ -15,6 +16,7 @@ export const SchoolRenderSelected = (result: ParsedSchoolInfoResult) => {
       </pre>
     );
   }
+
   if (result.apiType === "0") {
     return <RenderApi0 {...result.selectedItem} />;
   }
@@ -35,5 +37,8 @@ export const SchoolRenderSelected = (result: ParsedSchoolInfoResult) => {
   }
   if (result.apiType === "51") {
     return <RenderAp51 {...result.selectedItem} />;
+  }
+  if (result.apiType === "73") {
+    return <RenderAp73 {...result.selectedItem} />;
   }
 };

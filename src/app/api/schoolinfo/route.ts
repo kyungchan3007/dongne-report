@@ -3,7 +3,7 @@ import path from "node:path";
 import { NextRequest, NextResponse } from "next/server";
 import { env } from "@/shared/config/env";
 
-const API_TYPES = ["0", "08", "62", "63", "09", "94", "51"] as const;
+const API_TYPES = ["0", "08", "62", "63", "09", "94", "51", "73"] as const;
 
 const SIDO_ALIASES: Record<string, string> = {
   서울: "서울특별시",
@@ -165,6 +165,7 @@ export async function GET(request: NextRequest) {
   }
 
   const types = all ? API_TYPES : [apiType ?? "0"];
+
   const schulKndCode = inferSchulKndCodeFromName(schoolName);
   const { sidoCode, sggCode } = await inferSchulSidoCodeFromName(address ?? "");
 
