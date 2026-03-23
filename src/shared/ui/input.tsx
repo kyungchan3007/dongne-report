@@ -10,8 +10,10 @@ export const Input = React.forwardRef<
     <input
       ref={ref}
       className={cn(
-        "h-12 w-full rounded-2xl border border-[#d4e1f2] bg-white px-4 py-3 text-sm text-[#191f28] outline-none transition",
-        "placeholder:text-[#8b95a1] focus-visible:border-[#3182f6] focus-visible:ring-4 focus-visible:ring-[#3182f6]/15",
+        "h-14 w-full rounded-2xl border border-[#e5e8eb] bg-white px-5 py-3.5 text-[15px] font-medium text-[#191f28] outline-none transition-all duration-150",
+        "placeholder:text-[#b0b8c1] placeholder:font-normal",
+        "focus:border-[#3182f6] focus:ring-4 focus:ring-[#3182f6]/10",
+        "hover:border-[#c9d3dd]",
         className
       )}
       {...props}
@@ -19,3 +21,4 @@ export const Input = React.forwardRef<
   );
 });
 Input.displayName = "Input";
+

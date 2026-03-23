@@ -1,3 +1,5 @@
+import { MapPin } from "lucide-react";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import { KakaoMiniMap } from "@/widgets/kakao-map/ui/KakaoMiniMap";
 
@@ -10,13 +12,14 @@ type Props = {
 
 export function AptSummaryCard({ name, address, x, y }: Props) {
   return (
-    <Card className="overflow-hidden border-[#dce7f5]">
+    <Card className="overflow-hidden">
       <CardHeader>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-[#e9f2ff] px-3 py-1 text-xs font-semibold text-[#1b64da]">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f3ff] px-2.5 py-1 text-xs font-semibold text-[#3182f6]">
+            <MapPin size={11} strokeWidth={2.5} />
             선택한 단지
           </span>
-          <CardTitle>{name}</CardTitle>
+          <CardTitle className="text-lg">{name}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -26,3 +29,4 @@ export function AptSummaryCard({ name, address, x, y }: Props) {
     </Card>
   );
 }
+
