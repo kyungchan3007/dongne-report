@@ -1,5 +1,5 @@
 export type Yn = "Y" | "N";
-export type SchoolInfoApiType = "0" | "08" | "62" | "63" | "09" | "94" | "51";
+export type SchoolInfoApiType = "0" | "08" | "62" | "63" | "09" | "94" | "51" | "73";
 
 export type SchoolInfoListItemApi0 = {
   ABSCH_YN: Yn;
@@ -240,6 +240,34 @@ export interface SchoolInfoListItemApi51 {
   SCHUL_NM: string;
 }
 
+export type SchoolInfoListItemApi73 = {
+  ADRCD_CD: string;
+  ADRCD_NM: string;
+  ATPT_OFCDC_ORG_CODE: string;
+  ATPT_OFCDC_ORG_NM: string;
+  BNHH_YN: Yn;
+  COL_1: string; // 예: "○"
+  COL_2: string; // 예: " "
+  COL_3: string;
+  COL_4: string;
+  COL_6: string;
+  COL_7: number; // 예: 232000
+  COL_8: string; // 예: "○"
+  COL_9: string;
+  COL_10: string;
+  COL_11: string;
+  COL_13: string;
+  COL_14: number; // 예: 81000
+  FOND_SC_CODE: string;
+  HS_KND_SC_NM: string;
+  JU_ORG_CODE: string;
+  JU_ORG_NM: string;
+  LCTN_SC_CODE: string;
+  PBAN_EXCP_YN: Yn;
+  SCHUL_CODE: string;
+  SCHUL_KND_SC_CODE: string;
+  SCHUL_NM: string;
+};
 export type SchoolInfoListItemByApiType = {
   "0": SchoolInfoListItemApi0;
   "08": SchoolInfoListItemApi08;
@@ -248,6 +276,7 @@ export type SchoolInfoListItemByApiType = {
   "09": SchoolInfoListItemApi09;
   "94": SchoolInfoListItemApi94;
   "51": SchoolInfoListItemApi51;
+  "73": SchoolInfoListItemApi73;
 };
 
 export type SchoolItem = {
@@ -258,7 +287,8 @@ export type SchoolItem = {
     | SchoolInfoListItemApi63
     | SchoolInfoListItemApi09
     | SchoolInfoListItemApi94
-    | SchoolInfoListItemApi51;
+    | SchoolInfoListItemApi51
+    | SchoolInfoListItemApi73;
 };
 
 type ParsedSchoolInfoResultByType<T extends SchoolInfoApiType> = {
@@ -307,4 +337,5 @@ export const TITLE: Record<SchoolInfoApiType, string> = {
   "09": "학년별 학급별 학생수",
   "94": "대상별 학교폭력 예방교육 실적",
   "51": "입학생 현황",
+  "73": "교복 구매 유형 및 단가",
 };

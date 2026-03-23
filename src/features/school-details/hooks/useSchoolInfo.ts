@@ -124,6 +124,14 @@ function normalizeResult(
       ...parseRawResult<"94">(result.raw, schoolCode),
     };
   }
+  if (result.apiType === "73") {
+    return {
+      apiType: "73",
+      status: result.status,
+      raw: result.raw,
+      ...parseRawResult<"73">(result.raw, schoolCode),
+    };
+  }
   return {
     apiType: "51",
     status: result.status,
@@ -180,7 +188,7 @@ export function useSchoolInfo({ open, schoolCode, schoolName, address }: Params)
       mounted = false;
     };
   }, [address, open, schoolCode, schoolName]);
-
+  // console.log(data);
   return {
     loading,
     error,

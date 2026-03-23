@@ -41,18 +41,20 @@ export function SchoolInfoModal({ open, schoolName, schoolCode, address, onClose
             </div>
 
             <div className="max-h-[calc(92vh-80px)] space-y-4 overflow-y-auto p-5 sm:p-6">
-              {loading ? <p className="text-sm text-[#4e5968]">학교 정보를 불러오는 중...</p> : null}
+              {loading ? (
+                <p className="text-sm text-[#4e5968]">학교 정보를 불러오는 중...</p>
+              ) : null}
               {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
 
               {!loading && !error && data ? (
                 <div className="space-y-3">
-                  {data.results.map((result) => (
+                  {data.results.map((result, index) => (
                     <section
-                      key={result.apiType}
+                      key={`${result.apiType}_${index}`}
                       className="rounded-2xl border border-[#e6eef9] bg-[#fcfdff] p-4"
                     >
                       <h4 className="text-sm font-bold text-[#191f28]">{TITLE[result.apiType]}</h4>
-                      <p className="mt-1 text-xs text-[#6b7684]">status: {result.status}</p>
+                      {/*<p className="mt-1 text-xs text-[#6b7684]">status: {result.status}</p>*/}
                       <div className="mt-2">
                         <SchoolRenderSelected {...result} />
                       </div>
