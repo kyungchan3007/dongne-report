@@ -160,7 +160,7 @@ export function useSchoolInfo({ open, schoolCode, schoolName, address }: Params)
     setLoading(true);
     setError("");
     setData(null);
-
+    // console.log(schoolCode, schoolName, address);
     fetch(
       `/api/schoolinfo?schoolCode=${encodeURIComponent(schoolCode)}&schoolName=${encodeURIComponent(schoolName)}&address=${encodeURIComponent(address)}&all=1`
     )
