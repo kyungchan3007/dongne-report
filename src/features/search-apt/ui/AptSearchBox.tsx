@@ -3,7 +3,7 @@
 import { Combobox } from "@headlessui/react";
 import { Building2, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useState } from "react";
 
 import type { KakaoPlace } from "@/entities/kakao/model/types";
 import { Input } from "@/shared/ui/input";
@@ -15,6 +15,18 @@ export function AptSearchBox() {
   const [debounced, setDebounced] = useState("");
   const [items, setItems] = useState<KakaoPlace[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const onChange = (value: KakaoPlace | null) => {
+    if (!value) return;
+    setSelected(value);
+    const params = new URLSearchParams({
+      x: value.x,
+      y: value.y,
+      name: value.place_name,
+      address: value.road_address_name || value.address_name,
+    });
+    router.push(`/apt/${value.id}?${params.toString()}`);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setDebounced(query.trim()), 300);
@@ -34,12 +46,12 @@ export function AptSearchBox() {
       try {
         const response = await fetch(`/api/kakao/search?query=${encodeURIComponent(debounced)}`);
         const json = (await response.json()) as { documents?: KakaoPlace[] };
+        console.log(json);
         if (mounted) setItems(json.documents ?? []);
       } finally {
         if (mounted) setLoading(false);
       }
     }
-
     run();
     return () => {
       mounted = false;
@@ -52,20 +64,7 @@ export function AptSearchBox() {
   );
 
   return (
-    <Combobox
-      value={selected}
-      onChange={(value: KakaoPlace | null) => {
-        if (!value) return;
-        setSelected(value);
-        const params = new URLSearchParams({
-          x: value.x,
-          y: value.y,
-          name: value.place_name,
-          address: value.road_address_name || value.address_name,
-        });
-        router.push(`/apt/${value.id}?${params.toString()}`);
-      }}
-    >
+    <Combobox value={selected} onChange={(value: KakaoPlace | null) => onChange(value)}>
       <div className="relative">
         {/* Search 아이콘 */}
         <div className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-[#b0b8c1]">
@@ -125,4 +124,3 @@ export function AptSearchBox() {
     </Combobox>
   );
 }
-

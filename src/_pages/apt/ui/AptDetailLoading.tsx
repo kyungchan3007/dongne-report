@@ -33,7 +33,9 @@ export function AptDetailLoading() {
 
       {/* 스켈레톤 카드들 */}
       <Skeleton className="h-52 w-full" />
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
+        <Skeleton className="h-44 w-full" />
+        <Skeleton className="h-44 w-full" />
         <Skeleton className="h-44 w-full" />
         <Skeleton className="h-44 w-full" />
         <Skeleton className="h-44 w-full" />
@@ -42,4 +44,3 @@ export function AptDetailLoading() {
     </div>
   );
 }
-

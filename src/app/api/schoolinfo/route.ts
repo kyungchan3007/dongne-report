@@ -5,7 +5,7 @@ import {
   inferSchulKndCodeFromName,
   inferSchulSidoCodeFromName,
 } from "@/app/api/schoolinfo/utils/utils";
-import { maybeFilterRawResponse } from "@/app/api/schoolinfo/utils/serverDataProcessor";
+import { maybeFilterRawResponse } from "@/app/api/schoolinfo/processor/serverDataProcessor";
 
 export async function GET(request: NextRequest) {
   const schoolCode = request.nextUrl.searchParams.get("schoolCode")?.trim();

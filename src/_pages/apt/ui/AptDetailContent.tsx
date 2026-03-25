@@ -32,7 +32,6 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" as const } },
 };
 
-
 export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: Props) {
   return (
     <motion.section
@@ -60,21 +59,33 @@ export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: 
         <h1 className="mt-1 text-xl font-extrabold tracking-tight text-[#191f28] sm:text-2xl">
           생활권 상세 리포트
         </h1>
-        <p className="mt-2 text-sm text-[#4e5968]">각 항목을 눌러 주요 포인트를 빠르게 확인하세요.</p>
+        <p className="mt-2 text-sm text-[#4e5968]">
+          각 항목을 눌러 주요 포인트를 빠르게 확인하세요.
+        </p>
       </motion.div>
 
-      <motion.div variants={item} className="grid gap-4 md:grid-cols-2">
+      <motion.div variants={item} className="grid gap-4 md:grid-cols-3">
         <SafetyCard
           fullName={report.safety.fullName}
           grade={report.safety.grade}
           crimePer100k={report.safety.crimePer100k}
         />
+        <ChildcareCard count={report.childcare.count} top5={report.childcare.top5} />
+        <ChildcareCard count={report.childcare.count} top5={report.childcare.top5} />
         <TransportCard
           subwayTop3={report.transport.subwayTop3}
           busCount={report.transport.busCount}
           busTop5={report.transport.busTop5}
+          distance={report.carDistance}
         />
-        <ChildcareCard count={report.childcare.count} top5={report.childcare.top5} />
+        <SchoolCard
+          count={report.schools.count}
+          mappedCount={report.schools.mappedCount}
+          unmappedCount={report.schools.unmappedCount}
+          top10={report.schools.top10}
+          selectedSchool={selectedSchool}
+          setSelectedSchool={setSelectedSchool}
+        />
         <SchoolCard
           count={report.schools.count}
           mappedCount={report.schools.mappedCount}
@@ -87,4 +98,3 @@ export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: 
     </motion.section>
   );
 }
-
