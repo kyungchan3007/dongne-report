@@ -13,10 +13,8 @@ export function filterSchoolList(
 
   const byCode = list.filter((item) => normalizeText(item.SCHUL_CODE) === normalizedCode);
   if (byCode.length > 0) return byCode;
-
   const byName = list.filter((item) => normalizeText(item.SCHUL_NM) === normalizedName);
   if (byName.length <= 1) return byName;
-
   if (!normalizedAddress) return byName;
 
   const byAddress = byName.filter((item) => {
@@ -24,7 +22,6 @@ export function filterSchoolList(
     const extraAddress = normalizeText(item.ADRES_BRKDN);
     return normalizedAddress.includes(roadAddress) || normalizedAddress.includes(extraAddress);
   });
-
   return byAddress.length > 0 ? byAddress : byName;
 }
 

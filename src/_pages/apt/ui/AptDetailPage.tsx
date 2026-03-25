@@ -54,4 +54,3 @@ export function AptDetailPage({ placeId, x, y, name, address }: Props) {
     </AnimatePresence>
   );
 }
-

@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import type { KakaoPlace } from "@/entities/kakao/model/types";
-import type { NeighborhoodReport, ReportPoi } from "@/entities/report/model/types";
+import type { NeighborhoodReport, ReportPoi, WayPoint } from "@/entities/report/model/types";
 import { withSixHourCache } from "@/shared/lib/cache";
 import {
   getKakaoCategorySearchCached,
   getKakaoCoord2RegionCached,
+  getKakaoDistance,
   getKakaoKeywordSearchCached,
 } from "@/shared/lib/kakao";
 import { loadSafetyLookup, mapSchoolCode } from "@/shared/lib/report-data";
@@ -26,6 +27,28 @@ function toReportPoi(place: KakaoPlace, schoolCode?: string | null): ReportPoi {
     y: place.y,
     schoolCode,
   };
+}
+
+type RouteGuideLike = Pick<WayPoint, "name" | "x" | "y">;
+type RouteLike = { sections?: { guides?: RouteGuideLike[] }[] };
+
+function extractIcWaypointsFromTopRoute(route: RouteLike | undefined) {
+  if (!route?.sections) return [];
+
+  const collected = route.sections
+    .flatMap((section) => section.guides ?? [])
+    .filter((guide) => /(IC)/i.test(guide.name))
+    .map((guide) => ({
+      name: guide.name,
+      x: guide.x,
+      y: guide.y,
+    }));
+
+  return Array.from(
+    new Map(
+      collected.map((item) => [item.name.replace(/\s+/g, "").toUpperCase(), item] as const)
+    ).values()
+  );
 }
 
 async function buildReport(params: {
@@ -80,7 +103,7 @@ async function buildReport(params: {
       grade: "UNKNOWN",
     };
 
-    const [subway, schools, childcare, buses] = await Promise.all([
+    const [subway, schools, childcare, buses, distanceResult] = await Promise.all([
       getKakaoCategorySearchCached({
         category_group_code: CATEGORY.SUBWAY,
         x: resolvedX,
@@ -113,7 +136,18 @@ async function buildReport(params: {
         page: 1,
         size: 15,
       }),
+      getKakaoDistance({
+        name: resolvedName,
+        x: resolvedX,
+        y: resolvedY,
+      }),
     ]);
+
+    const topRoute = distanceResult.current.routes[0];
+    const routeSummary = topRoute?.summary;
+    const distanceKm =
+      typeof routeSummary?.distance === "number" ? (routeSummary.distance / 1000).toFixed(1) : null;
+    const icWaypoints = extractIcWaypointsFromTopRoute(topRoute);
 
     const schoolPois: ReportPoi[] = [];
 
@@ -157,6 +191,21 @@ async function buildReport(params: {
         top10: schoolPois.slice(0, 10),
         mappedCount,
         unmappedCount: schoolPois.length - mappedCount,
+      },
+      carDistance: {
+        routeCount: distanceResult.current.routes.length,
+        destination: routeSummary?.destination ?? null,
+        origin: routeSummary?.origin ?? null,
+        distance: distanceKm,
+        durationSec: {
+          now: routeSummary?.duration ?? null,
+          morning8: distanceResult.byDeparture.morning8.durationSec,
+          noon12: distanceResult.byDeparture.noon12.durationSec,
+          evening19: distanceResult.byDeparture.evening19.durationSec,
+        },
+        waypoints: icWaypoints,
+        taxi: routeSummary?.fare?.taxi ?? null,
+        toll: routeSummary?.fare?.toll ?? null,
       },
     };
 
