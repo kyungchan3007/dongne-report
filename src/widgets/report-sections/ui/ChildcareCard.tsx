@@ -1,6 +1,6 @@
 import { Baby } from "lucide-react";
 
-import type { ReportPoi } from "@/entities/report/model/types";
+import type { Academy, ReportPoi } from "@/entities/report/model/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 
 type Props = {
@@ -37,13 +37,10 @@ export function ChildcareCard({ count, top5 }: Props) {
                 {item.name}
               </li>
             ))}
-            {!top5.length && (
-              <li className="text-sm text-[#b0b8c1]">데이터가 없습니다.</li>
-            )}
+            {!top5.length && <li className="text-sm text-[#b0b8c1]">데이터가 없습니다.</li>}
           </ul>
         </div>
       </CardContent>
     </Card>
   );
 }
-

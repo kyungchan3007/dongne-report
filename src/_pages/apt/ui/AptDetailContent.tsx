@@ -10,6 +10,7 @@ import { ChildcareCard } from "@/widgets/report-sections/ui/ChildcareCard";
 import { SafetyCard } from "@/widgets/report-sections/ui/SafetyCard";
 import { SchoolCard } from "@/widgets/report-sections/ui/SchoolCard";
 import { TransportCard } from "@/widgets/report-sections/ui/TransportCard";
+import { AcademyCard } from "@/widgets/report-sections/ui/AcademyCard";
 
 type Props = {
   report: NeighborhoodReport;
@@ -78,14 +79,7 @@ export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: 
           busTop5={report.transport.busTop5}
           distance={report.carDistance}
         />
-        <SchoolCard
-          count={report.schools.count}
-          mappedCount={report.schools.mappedCount}
-          unmappedCount={report.schools.unmappedCount}
-          top10={report.schools.top10}
-          selectedSchool={selectedSchool}
-          setSelectedSchool={setSelectedSchool}
-        />
+        <AcademyCard count={report.academy.count} academy={report.academy.academy} />
         <SchoolCard
           count={report.schools.count}
           mappedCount={report.schools.mappedCount}

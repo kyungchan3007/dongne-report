@@ -1,4 +1,4 @@
-import { Bus, Car, MapPinned, Timer, Train } from "lucide-react";
+import { Bus, Car, Clock, MapPinned, Timer, Train } from "lucide-react";
 
 import { ReportCarDistance, ReportPoi } from "@/entities/report/model/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
@@ -118,17 +118,34 @@ export function TransportCard({ subwayTop3, busCount, busTop5, distance }: Props
 
         <div className="rounded-xl bg-[#f9fafb] p-3">
           <div className="mb-2.5 flex items-center gap-2">
-            <Timer size={13} className="text-[#4e5968]" />
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#8b95a1]">소요시간</p>
+            <Clock size={13} className="text-[#4e5968]" />
+            <span className={"flex-col"}>
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#8b95a1]">
+                소요시간
+              </p>
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-[#8b95a1]">
+                예상시간이오니 정확하지 않을수 있습니다.
+              </p>
+            </span>
           </div>
-          <ul className="space-y-1.5">
+          <ul className="space-y-1.5 list-none pl-0 m-0">
             {timeSlots.map((slot) => (
               <li
                 key={slot.label}
-                className="flex items-center justify-between text-sm text-[#4e5968]"
+                className="flex items-center justify-between text-sm text-[#191f28]"
               >
-                <span>{slot.label}</span>
-                <span className="font-semibold text-[#191f28]">{slot.value}</span>
+                <span className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#3182f6]" />
+                  {slot.label}
+                </span>
+
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1 rounded-full bg-[#e8f3ff] px-2 py-0.5 text-xs font-bold text-[#3182f6]"
+                >
+                  <Timer size={12} />
+                  {`${slot.value}`}
+                </button>
               </li>
             ))}
           </ul>
