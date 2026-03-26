@@ -15,6 +15,7 @@ const CATEGORY = {
   SUBWAY: "SW8",
   SCHOOL: "SC4",
   CHILDCARE: "PS3",
+  ACADEMY: "AC5",
 } as const;
 
 function toReportPoi(place: KakaoPlace, schoolCode?: string | null): ReportPoi {
@@ -103,7 +104,7 @@ async function buildReport(params: {
       grade: "UNKNOWN",
     };
 
-    const [subway, schools, childcare, buses, distanceResult] = await Promise.all([
+    const [subway, schools, childcare, buses, academy, distanceResult] = await Promise.all([
       getKakaoCategorySearchCached({
         category_group_code: CATEGORY.SUBWAY,
         x: resolvedX,
@@ -128,8 +129,17 @@ async function buildReport(params: {
         page: 1,
         size: 15,
       }),
+
       getKakaoKeywordSearchCached({
         query: "버스정류장",
+        x: resolvedX,
+        y: resolvedY,
+        radius: 1000,
+        page: 1,
+        size: 15,
+      }),
+      getKakaoCategorySearchCached({
+        category_group_code: CATEGORY.ACADEMY,
         x: resolvedX,
         y: resolvedY,
         radius: 1000,
@@ -142,7 +152,7 @@ async function buildReport(params: {
         y: resolvedY,
       }),
     ]);
-
+    console.log(academy);
     const topRoute = distanceResult.current.routes[0];
     const routeSummary = topRoute?.summary;
     const distanceKm =
@@ -191,6 +201,10 @@ async function buildReport(params: {
         top10: schoolPois.slice(0, 10),
         mappedCount,
         unmappedCount: schoolPois.length - mappedCount,
+      },
+      academy: {
+        count: academy.documents.length,
+        academy: academy.documents,
       },
       carDistance: {
         routeCount: distanceResult.current.routes.length,

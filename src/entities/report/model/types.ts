@@ -1,4 +1,4 @@
-import type { KakaoPoint } from "@/entities/kakao/model/types";
+import { KakaoPlace, KakaoPoint } from "@/entities/kakao/model/types";
 
 export type ReportPoi = {
   id: string;
@@ -17,6 +17,11 @@ export type Xy = {
 
 export interface WayPoint extends Xy {
   name: string;
+}
+
+export interface Academy {
+  count: number;
+  academy: KakaoPlace[];
 }
 
 export type ReportDurationSec = {
@@ -77,5 +82,6 @@ export type NeighborhoodReport = {
   transport: ReportTransport;
   childcare: ReportChildcare;
   schools: ReportSchools;
+  academy: Academy;
   carDistance: ReportCarDistance;
 };

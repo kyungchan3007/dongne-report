@@ -8,6 +8,7 @@ export type KakaoPlace = {
   category_group_code?: string;
   category_group_name?: string;
   place_url?: string;
+  distance?: string;
 };
 
 export type KakaoSearchResponse = {
