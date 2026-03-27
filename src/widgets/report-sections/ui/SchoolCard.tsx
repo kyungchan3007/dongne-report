@@ -1,4 +1,4 @@
-import { ChevronRight, GraduationCap } from "lucide-react";
+import { ChevronRight, Footprints, GraduationCap, PersonStanding, Timer } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 
 import type { ReportPoi } from "@/entities/report/model/types";
@@ -36,15 +36,15 @@ export function SchoolCard({
         <CardContent className="space-y-3">
           {/* 요약 배지 */}
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-full bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-[#4e5968]">
+            <span className="rounded-full bg-[#fff0e8] px-3 py-1 text-xs font-semibold text-[#f06000]">
               학교 (1.5km) 총 {count}개
             </span>
-            <span className="rounded-full bg-[#e8f3ff] px-3 py-1 text-xs font-semibold text-[#3182f6]">
-              코드 매핑 {mappedCount}개
-            </span>
-            <span className="rounded-full bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-[#8b95a1]">
-              미매핑 {unmappedCount}개
-            </span>
+            {/*<span className="rounded-full bg-[#e8f3ff] px-3 py-1 text-xs font-semibold text-[#3182f6]">*/}
+            {/*  코드 매핑 {mappedCount}개*/}
+            {/*</span>*/}
+            {/*<span className="rounded-full bg-[#f9fafb] px-3 py-1 text-xs font-semibold text-[#8b95a1]">*/}
+            {/*   {unmappedCount}개*/}
+            {/*</span>*/}
           </div>
 
           {/* 학교 목록 */}
@@ -69,6 +69,18 @@ export function SchoolCard({
                         <p className="mt-0.5 truncate text-xs text-[#6b7684]">
                           {item.roadAddress || item.address}
                         </p>
+                        <p className="mt-0.5 truncate text-xs text-[#6b7684] flex items-center gap-2">
+                          <li className="flex items-center justify-between text-sm text-[#191f28]">
+                            <button
+                              type="button"
+                              className="inline-flex items-center gap-1 rounded-full bg-[#fff0e8] px-2 py-0.5 text-xs font-bold text-[#f06000]"
+                            >
+                              <Footprints size={12} />
+                              {item.distance} km
+                            </button>
+                          </li>
+                        </p>
+
                         {disabled && (
                           <p className="mt-1 text-xs font-medium text-[#f04452]">
                             학교 코드 없음 · 상세 조회 불가
@@ -86,9 +98,7 @@ export function SchoolCard({
                 </li>
               );
             })}
-            {!top10.length && (
-              <li className="py-2 text-sm text-[#b0b8c1]">데이터가 없습니다.</li>
-            )}
+            {!top10.length && <li className="py-2 text-sm text-[#b0b8c1]">데이터가 없습니다.</li>}
           </ul>
         </CardContent>
       </Card>
@@ -103,4 +113,3 @@ export function SchoolCard({
     </>
   );
 }
-

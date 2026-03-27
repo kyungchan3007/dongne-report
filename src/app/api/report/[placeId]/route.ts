@@ -18,7 +18,7 @@ const CATEGORY = {
   ACADEMY: "AC5",
 } as const;
 
-function toReportPoi(place: KakaoPlace, schoolCode?: string | null): ReportPoi {
+function toReportPoi(place: KakaoPlace, schoolCode?: string | null, distance?: number): ReportPoi {
   return {
     id: place.id,
     name: place.place_name,
@@ -27,6 +27,7 @@ function toReportPoi(place: KakaoPlace, schoolCode?: string | null): ReportPoi {
     x: place.x,
     y: place.y,
     schoolCode,
+    distance: distance,
   };
 }
 
@@ -152,7 +153,7 @@ async function buildReport(params: {
         y: resolvedY,
       }),
     ]);
-    console.log(academy);
+
     const topRoute = distanceResult.current.routes[0];
     const routeSummary = topRoute?.summary;
     const distanceKm =
@@ -167,7 +168,10 @@ async function buildReport(params: {
         sigungu,
         kakaoRoadAddress: school.road_address_name,
       });
-      schoolPois.push(toReportPoi(school, schoolCode));
+      const m = Number(school.distance);
+      const km = Number.isFinite(m) ? Number((m / 1000).toFixed(2)) : undefined;
+
+      schoolPois.push(toReportPoi(school, schoolCode, km));
     }
 
     const mappedCount = schoolPois.filter((s) => s.schoolCode).length;

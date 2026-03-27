@@ -8,6 +8,7 @@ export type ReportPoi = {
   x: string;
   y: string;
   schoolCode?: string | null;
+  distance?: number;
 };
 
 export type Xy = {
