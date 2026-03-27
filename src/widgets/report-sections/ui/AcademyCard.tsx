@@ -1,6 +1,4 @@
-import { Baby, Footprints, Timer, University } from "lucide-react";
-
-import type { Academy, ReportPoi } from "@/entities/report/model/types";
+import { Footprints, University } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import { KakaoPlace } from "@/entities/kakao/model/types";
 

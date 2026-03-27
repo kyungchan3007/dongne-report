@@ -46,7 +46,7 @@ export function AptSearchBox() {
       try {
         const response = await fetch(`/api/kakao/search?query=${encodeURIComponent(debounced)}`);
         const json = (await response.json()) as { documents?: KakaoPlace[] };
-        console.log(json);
+
         if (mounted) setItems(json.documents ?? []);
       } finally {
         if (mounted) setLoading(false);
