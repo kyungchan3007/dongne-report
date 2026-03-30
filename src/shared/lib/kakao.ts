@@ -3,6 +3,7 @@ import "server-only";
 import type {
   KakaoCoord2RegionResponse,
   KakaoDirectionsResponse,
+  KakaoPlace,
   KakaoSearchResponse,
 } from "@/entities/kakao/model/types";
 import { env } from "@/shared/config/env";
@@ -203,6 +204,7 @@ export function getKakaoDistance(params: DistanceParams) {
       ...departures.map((item) => `${item.key}:${item.departureTime}`),
     ],
     async (): Promise<KakaoDistanceResult> => {
+      //지금 출발
       const [current, ...futureItems] = await Promise.all([
         kakaoFetch<KakaoDirectionsResponse>(KAKAO_MOBILITY_BASE_URL, "/v1/directions", {
           origin: `${params.x},${params.y},name=${params.name}`,
@@ -213,6 +215,7 @@ export function getKakaoDistance(params: DistanceParams) {
         }),
         ...departures.map(async (departure) => {
           try {
+            //미래 출발
             const response = await kakaoFetch<KakaoDirectionsResponse>(
               KAKAO_MOBILITY_BASE_URL,
               "/v1/future/directions",
@@ -260,3 +263,5 @@ export function getKakaoDistance(params: DistanceParams) {
     }
   );
 }
+
+export function getKakaoInfra() {}

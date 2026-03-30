@@ -1,6 +1,6 @@
 import { Baby } from "lucide-react";
 
-import type { Academy, ReportPoi } from "@/entities/report/model/types";
+import type { ReportPoi } from "@/entities/report/model/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 
 type Props = {

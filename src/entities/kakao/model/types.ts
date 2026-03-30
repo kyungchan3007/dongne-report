@@ -7,6 +7,7 @@ export type KakaoPlace = {
   y: string;
   category_group_code?: string;
   category_group_name?: string;
+  category_name: string;
   place_url?: string;
   distance?: string;
 };
