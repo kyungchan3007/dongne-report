@@ -69,17 +69,13 @@ export function SchoolCard({
                         <p className="mt-0.5 truncate text-xs text-[#6b7684]">
                           {item.roadAddress || item.address}
                         </p>
-                        <p className="mt-0.5 truncate text-xs text-[#6b7684] flex items-center gap-2">
-                          <li className="flex items-center justify-between text-sm text-[#191f28]">
-                            <button
-                              type="button"
-                              className="inline-flex items-center gap-1 rounded-full bg-[#fff0e8] px-2 py-0.5 text-xs font-bold text-[#f06000]"
-                            >
-                              <Footprints size={12} />
-                              {item.distance} km
-                            </button>
-                          </li>
-                        </p>
+
+                        <div className="flex items-center justify-between text-sm text-[#191f28]">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-[#fff0e8] px-2 py-0.5 text-xs font-bold text-[#f06000]">
+                            <Footprints size={12} />
+                            {item.distance} km
+                          </span>
+                        </div>
 
                         {disabled && (
                           <p className="mt-1 text-xs font-medium text-[#f04452]">

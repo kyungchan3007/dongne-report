@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import type { KakaoPlace } from "@/entities/kakao/model/types";
+import type { KakaoDirectionsResponse, KakaoPlace } from "@/entities/kakao/model/types";
 import type { NeighborhoodReport, ReportPoi, WayPoint } from "@/entities/report/model/types";
 import { withSixHourCache } from "@/shared/lib/cache";
 import {
@@ -16,6 +16,8 @@ const CATEGORY = {
   SCHOOL: "SC4",
   CHILDCARE: "PS3",
   ACADEMY: "AC5",
+  HOSPITAL: "HP8",
+  PHARMACY: "PM9",
 } as const;
 
 function toReportPoi(place: KakaoPlace, schoolCode?: string | null, distance?: number): ReportPoi {
@@ -30,6 +32,17 @@ function toReportPoi(place: KakaoPlace, schoolCode?: string | null, distance?: n
     distance: distance,
   };
 }
+
+const CATEGORY_FILTER = ["의원", "성형외과", "일반의원", "피부과", "한방병원"];
+
+const filterPlace = (hospital: KakaoPlace[]) => {
+  const text = hospital.filter((p: KakaoPlace) => {
+    const text = p.category_name;
+    return !CATEGORY_FILTER.some((word) => text.includes(word));
+  });
+  console.log(text);
+  return text;
+};
 
 type RouteGuideLike = Pick<WayPoint, "name" | "x" | "y">;
 type RouteLike = { sections?: { guides?: RouteGuideLike[] }[] };
@@ -105,54 +118,71 @@ async function buildReport(params: {
       grade: "UNKNOWN",
     };
 
-    const [subway, schools, childcare, buses, academy, distanceResult] = await Promise.all([
-      getKakaoCategorySearchCached({
-        category_group_code: CATEGORY.SUBWAY,
-        x: resolvedX,
-        y: resolvedY,
-        radius: 1000,
-        page: 1,
-        size: 15,
-      }),
-      getKakaoCategorySearchCached({
-        category_group_code: CATEGORY.SCHOOL,
-        x: resolvedX,
-        y: resolvedY,
-        radius: 1500,
-        page: 1,
-        size: 15,
-      }),
-      getKakaoCategorySearchCached({
-        category_group_code: CATEGORY.CHILDCARE,
-        x: resolvedX,
-        y: resolvedY,
-        radius: 1000,
-        page: 1,
-        size: 15,
-      }),
+    const [subway, schools, childcare, buses, academy, pharmacy, hospital, distanceResult] =
+      await Promise.all([
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.SUBWAY,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.SCHOOL,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1500,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.CHILDCARE,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
 
-      getKakaoKeywordSearchCached({
-        query: "버스정류장",
-        x: resolvedX,
-        y: resolvedY,
-        radius: 1000,
-        page: 1,
-        size: 15,
-      }),
-      getKakaoCategorySearchCached({
-        category_group_code: CATEGORY.ACADEMY,
-        x: resolvedX,
-        y: resolvedY,
-        radius: 1000,
-        page: 1,
-        size: 15,
-      }),
-      getKakaoDistance({
-        name: resolvedName,
-        x: resolvedX,
-        y: resolvedY,
-      }),
-    ]);
+        getKakaoKeywordSearchCached({
+          query: "버스정류장",
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.ACADEMY,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.PHARMACY,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoCategorySearchCached({
+          category_group_code: CATEGORY.HOSPITAL,
+          x: resolvedX,
+          y: resolvedY,
+          radius: 1000,
+          page: 1,
+          size: 15,
+        }),
+        getKakaoDistance({
+          name: resolvedName,
+          x: resolvedX,
+          y: resolvedY,
+        }),
+      ]);
 
     const topRoute = distanceResult.current.routes[0];
     const routeSummary = topRoute?.summary;
@@ -208,7 +238,15 @@ async function buildReport(params: {
       },
       academy: {
         count: academy.documents.length,
-        academy: academy.documents,
+        place: academy.documents,
+      },
+      hospital: {
+        count: hospital.documents.length,
+        place: filterPlace(hospital.documents),
+      },
+      pharmacy: {
+        count: pharmacy.documents.length,
+        place: pharmacy.documents,
       },
       carDistance: {
         routeCount: distanceResult.current.routes.length,

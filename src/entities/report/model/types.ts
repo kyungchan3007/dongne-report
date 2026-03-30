@@ -20,9 +20,9 @@ export interface WayPoint extends Xy {
   name: string;
 }
 
-export interface Academy {
+export interface PlaceList {
   count: number;
-  academy: KakaoPlace[];
+  place: KakaoPlace[];
 }
 
 export type ReportDurationSec = {
@@ -83,6 +83,8 @@ export type NeighborhoodReport = {
   transport: ReportTransport;
   childcare: ReportChildcare;
   schools: ReportSchools;
-  academy: Academy;
+  academy: PlaceList;
+  pharmacy: PlaceList;
+  hospital: PlaceList;
   carDistance: ReportCarDistance;
 };
