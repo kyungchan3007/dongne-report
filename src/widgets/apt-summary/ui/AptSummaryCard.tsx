@@ -12,7 +12,7 @@ type Props = {
 
 export function AptSummaryCard({ name, address, x, y }: Props) {
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden ">
       <CardHeader>
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-[#e8f3ff] px-2.5 py-1 text-xs font-semibold text-[#3182f6]">
@@ -29,4 +29,3 @@ export function AptSummaryCard({ name, address, x, y }: Props) {
     </Card>
   );
 }
-

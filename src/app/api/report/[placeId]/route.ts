@@ -40,8 +40,8 @@ const filterPlace = (hospital: KakaoPlace[]) => {
     const text = p.category_name;
     return !CATEGORY_FILTER.some((word) => text.includes(word));
   });
-  console.log(text);
-  return text;
+
+  return text.slice(0, 10);
 };
 
 type RouteGuideLike = Pick<WayPoint, "name" | "x" | "y">;
@@ -246,7 +246,7 @@ async function buildReport(params: {
       },
       pharmacy: {
         count: pharmacy.documents.length,
-        place: pharmacy.documents,
+        place: pharmacy.documents.slice(0, 10),
       },
       carDistance: {
         routeCount: distanceResult.current.routes.length,

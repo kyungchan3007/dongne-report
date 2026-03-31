@@ -19,6 +19,13 @@ const config: Config = {
         md: "0.5rem",
         sm: "0.375rem",
       },
+      screens: {
+        sm: "640px", // 모바일 큰 화면
+        md: "768px", // 태블릿
+        lg: "1024px", // 작은 데스크탑
+        xl: "1280px", // 데스크탑
+        "2xl": "1536px", // 큰 데스크탑
+      },
     },
   },
   plugins: [],

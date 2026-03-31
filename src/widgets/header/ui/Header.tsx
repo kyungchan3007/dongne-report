@@ -3,6 +3,7 @@
 import { Home, MapPin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function Header() {
   const pathname = usePathname();
@@ -12,12 +13,13 @@ export function Header() {
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* 로고 */}
         <Link href="/" className="inline-flex items-center gap-2 group">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#3182f6] text-white shadow-[0_2px_8px_rgba(49,130,246,0.4)] transition-transform group-hover:scale-105">
-            <Home size={15} strokeWidth={2.5} />
+          {/*<span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#3182f6] text-white shadow-[0_2px_8px_rgba(49,130,246,0.4)] transition-transform group-hover:scale-105">*/}
+          {/*<Home size={15} strokeWidth={2.5} />*/}
+          {/*</span>*/}
+          <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
+            <Image src="/images/appLogo.svg" alt="앱 로고" fill className="object-contain p-1" />
           </span>
-          <span className="text-[15px] font-bold text-[#191f28] tracking-tight">
-            동네리포트
-          </span>
+          <span className="text-[15px] font-bold text-[#191f28] tracking-tight">핀 리포트</span>
         </Link>
 
         {/* 네비게이션 */}
@@ -48,4 +50,3 @@ export function Header() {
     </header>
   );
 }
-

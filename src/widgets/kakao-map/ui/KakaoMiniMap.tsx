@@ -29,14 +29,25 @@ export function KakaoMiniMap({ x, y }: Props) {
 
     const setupMap = () => {
       if (!window.kakao?.maps || !mapRef.current) return;
+
       window.kakao.maps.load(() => {
         if (!window.kakao?.maps || !mapRef.current) return;
+
+        const maps = window.kakao!.maps as any;
+        const markerImage = new maps.MarkerImage("/images/appLogo.svg", new maps.Size(40, 40), {
+          offset: new maps.Point(20, 40),
+        });
+
         const center = new window.kakao.maps.LatLng(Number(y), Number(x));
         const map = new window.kakao.maps.Map(mapRef.current, {
           center,
           level: 4,
         });
-        const marker = new window.kakao.maps.Marker({ position: center });
+        const marker = new window.kakao.maps.Marker({
+          position: center,
+          title: "아파트 위치",
+          image: markerImage,
+        });
         marker.setMap(map);
       });
     };
@@ -64,5 +75,5 @@ export function KakaoMiniMap({ x, y }: Props) {
     return () => script.removeEventListener("load", onScriptLoad);
   }, [x, y]);
 
-  return <div ref={mapRef} className="h-48 w-full rounded-md border" />;
+  return <div ref={mapRef} className="h-44 md:h-60 lg:h-96  sm:h-64 w-full rounded-md border" />;
 }

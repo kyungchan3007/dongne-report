@@ -9,7 +9,6 @@ import { RenderAp51 } from "@/widgets/school-detail/ui/schoolInfo/AdmissionStatu
 import { RenderAp73 } from "@/widgets/school-detail/ui/schoolInfo/uniformStatus/uniformStatus";
 
 export const SchoolRenderSelected = (result: ParsedSchoolInfoResult) => {
-  // console.log(result);
   if (!result.selectedItem) {
     return (
       <pre className="mt-2 max-h-60 overflow-auto rounded bg-slate-50 p-2 text-xs">

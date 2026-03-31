@@ -49,15 +49,12 @@ export function normalizeSidoName(input: string): { first: string; sigg: string 
 export async function inferSchulSidoCodeFromName(sidoName: string): Promise<RegionCodeResult> {
   const { sido, sigungu } = await loadRegionCodes();
   const normalized = normalizeSidoName(sidoName);
-  // console.log(normalized, "시군구");
+
   if (!normalized.first && !normalized.sigg) {
     return { sidoCode: null, sggCode: null };
   }
 
   const canonical = SIDO_ALIASES[normalized.first] ?? normalized.first;
-  // console.log(canonical, "SIDO_ALIASES");
-  // console.log(sido[canonical], "sidoCode");
-  // console.log(sigungu, "sggCode");
 
   return {
     sidoCode: canonical && sido[canonical] ? sido[canonical] : null,
