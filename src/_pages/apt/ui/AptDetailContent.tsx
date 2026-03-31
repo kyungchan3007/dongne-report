@@ -66,23 +66,23 @@ export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: 
         </p>
       </motion.div>
 
-      <motion.div variants={item} className="grid gap-4 md:grid-cols-3">
+      <motion.div variants={item} className="flex flex-col gap-4">
         <SafetyCard
           fullName={report.safety.fullName}
           grade={report.safety.grade}
           crimePer100k={report.safety.crimePer100k}
         />
         <ChildcareCard count={report.childcare.count} top5={report.childcare.top5} />
-        <InfraCard
-          count={report.hospital.count}
-          pharmacy={report.pharmacy.place}
-          hospital={report.hospital.place}
-        />
         <TransportCard
           subwayTop3={report.transport.subwayTop3}
           busCount={report.transport.busCount}
           busTop5={report.transport.busTop5}
           distance={report.carDistance}
+        />
+        <InfraCard
+          count={report.hospital.count}
+          pharmacy={report.pharmacy.place}
+          hospital={report.hospital.place}
         />
         <AcademyCard count={report.academy.count} academy={report.academy.place} />
         <SchoolCard
