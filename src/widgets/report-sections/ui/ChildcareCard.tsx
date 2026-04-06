@@ -10,7 +10,7 @@ type Props = {
 
 export function ChildcareCard({ count, top5 }: Props) {
   return (
-    <Card>
+      <Card className="overflow-hidden border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
       <CardHeader>
         <div className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fff0f0]">
