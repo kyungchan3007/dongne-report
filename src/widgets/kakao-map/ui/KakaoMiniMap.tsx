@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import {MapMarker} from "@/widgets/apt-summary/ui/AptSummaryCard";
 
 declare global {
   interface Window {
@@ -15,12 +16,47 @@ declare global {
   }
 }
 
+
+
+
 type Props = {
   x: string;
   y: string;
+  markers: MapMarker[];
 };
 
-export function KakaoMiniMap({ x, y }: Props) {
+const createAptMarker = (maps: any, map: any, center: any) => {
+  const markerImage = new maps.MarkerImage("/images/appLogo.svg", new maps.Size(40, 40), {
+    offset: new maps.Point(20, 40),
+  });
+
+  const marker = new maps.Marker({
+    position: center,
+    title: "아파트 위치",
+    image: markerImage,
+  });
+
+  marker.setMap(map);
+};
+
+const createPoiMarkers = (maps: any, map: any, markers: MapMarker[]) => {
+  markers.forEach((item) => {
+    const position = new maps.LatLng(Number(item.y), Number(item.x));
+    const markerImage = new maps.MarkerImage(item.marker, new maps.Size(40, 40), {
+      offset: new maps.Point(position.x, position.y),
+    })
+    const marker = new maps.Marker({
+      position,
+      title: item.title,
+      image:markerImage
+    });
+
+    marker.setMap(map);
+  });
+};
+
+
+export function KakaoMiniMap({ x, y, markers = [] }: Props) {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,22 +69,15 @@ export function KakaoMiniMap({ x, y }: Props) {
       window.kakao.maps.load(() => {
         if (!window.kakao?.maps || !mapRef.current) return;
 
-        const maps = window.kakao!.maps as any;
-        const markerImage = new maps.MarkerImage("/images/appLogo.svg", new maps.Size(40, 40), {
-          offset: new maps.Point(20, 40),
-        });
-
-        const center = new window.kakao.maps.LatLng(Number(y), Number(x));
-        const map = new window.kakao.maps.Map(mapRef.current, {
+        const maps = window.kakao.maps;
+        const center = new maps.LatLng(Number(y), Number(x));
+        const map = new maps.Map(mapRef.current, {
           center,
           level: 4,
         });
-        const marker = new window.kakao.maps.Marker({
-          position: center,
-          title: "아파트 위치",
-          image: markerImage,
-        });
-        marker.setMap(map);
+
+        createAptMarker(maps, map, center);
+        createPoiMarkers(maps, map, markers);
       });
     };
 
@@ -73,7 +102,7 @@ export function KakaoMiniMap({ x, y }: Props) {
     document.head.appendChild(script);
 
     return () => script.removeEventListener("load", onScriptLoad);
-  }, [x, y]);
+  }, [x, y,markers]);
 
   return <div ref={mapRef} className="h-44 md:h-60 lg:h-96  sm:h-64 w-full rounded-md border" />;
 }

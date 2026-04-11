@@ -12,6 +12,8 @@ import { SchoolCard } from "@/widgets/report-sections/ui/SchoolCard";
 import { TransportCard } from "@/widgets/report-sections/ui/TransportCard";
 import { AcademyCard } from "@/widgets/report-sections/ui/AcademyCard";
 import { InfraCard } from "@/widgets/report-sections/ui/infraCard";
+import {useReportSectionSelection} from "@/pages/apt/hooks/useReportSection";
+import {usePinHooks} from "@/features/apt-infra/hooks/usePinHooks";
 
 type Props = {
   report: NeighborhoodReport;
@@ -35,6 +37,10 @@ const item: Variants = {
 };
 
 export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: Props) {
+  const { selectedSection,handleTagClick } = useReportSectionSelection(report);
+  const { markers } = usePinHooks({ selectedSection });
+
+
   return (
     <motion.section
       className="space-y-5 sm:space-y-6"
@@ -44,10 +50,11 @@ export function AptDetailContent({ report, selectedSchool, setSelectedSchool }: 
     >
       <motion.div variants={item}>
         <AptSummaryCard
-          name={report.place.name}
-          address={report.place.address}
-          x={report.place.x}
-          y={report.place.y}
+            report={report}
+            x={report.place.x}
+            y={report.place.y}
+            onTagClick={handleTagClick}
+            markers={markers}
         />
       </motion.div>
 

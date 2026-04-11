@@ -1,4 +1,15 @@
 import { KakaoPlace, KakaoPoint } from "@/entities/kakao/model/types";
+export type SummaryTagKey = "childcare" | "transport" | "hospital" | "academy" | "schools";
+
+export type SummarySectionMap = {
+  childcare: NeighborhoodReport["childcare"];
+  transport: NeighborhoodReport["transport"];
+  hospital: NeighborhoodReport["hospital"];
+  academy: NeighborhoodReport["academy"];
+  schools: NeighborhoodReport["schools"];
+};
+
+export type SelectedSectionType = SummarySectionMap[SummaryTagKey];
 
 export type ReportPoi = {
   id: string;
